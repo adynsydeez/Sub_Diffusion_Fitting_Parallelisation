@@ -1,0 +1,51 @@
+# --- C/C++ build output ---
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+*.out
+*.pdb
+*.ilk
+*.gch
+*.pch
+build/
+bin/
+out/
+
+# --- CMake ---
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+_deps/
+Makefile
+
+# --- MATLAB ---
+*.asv
+*.m~
+*.mex*
+slprj/
+octave-workspace
+
+# --- Data and results (large, not for version control) ---
+*.nii
+*.nii.gz
+*.mat
+*.bval
+*.bvec
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+.vs/
+*.swp
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
