@@ -37,6 +37,7 @@ octave-workspace
 *.mat
 *.bval
 *.bvec
+*.delta
 
 # --- Editors / IDEs ---
 .vscode/

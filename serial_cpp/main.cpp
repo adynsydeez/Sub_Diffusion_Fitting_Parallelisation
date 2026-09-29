@@ -12,7 +12,7 @@
 // Configuration
 const std::string SUBJECT  = "sub_001";
 const std::string DATATYPE = "_real"; // "_real" or ""
-const std::string FOLDER   = "C:/Users/adyna/Downloads/dwi_real/dwi_real/";
+const std::string FOLDER   = "./data/dwi_real/";
 
 constexpr std::array<double, 9> BVEC = {0, 50, 350, 800, 1500, 2400, 3450, 4750, 6000}; // s/mm^2
 constexpr std::size_t NB = BVEC.size();
