@@ -10,6 +10,7 @@
 #include <vector>
 
 #include "read_mri.h"
+#include "mittag-leffler.h"
 
 // Configuration
 const std::string SUBJECT = "sub_001";
@@ -30,8 +31,7 @@ struct FitResult
     double err;
 };
 
-// TODO: port MATLAB/ml.m (Mittag-Leffler function, OPC algorithm)
-// double ml(double z, double alpha);
+double ml(double z, double alpha);
 
 // TODO: port MATLAB/fit_voxel_sub_ml.m (bounded least-squares fit)
 // FitResult fit_voxel_sub_ml(const std::array<double, NB>& Svec);
