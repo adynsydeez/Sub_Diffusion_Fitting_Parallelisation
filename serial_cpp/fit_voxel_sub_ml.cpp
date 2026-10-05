@@ -30,9 +30,9 @@ namespace
     };
 }
 
-FitResult fit_voxel_sub_ml(const std::array<double, 9> &Svec, const std::array<double, 9> &bvec, double D_guess, double beta_guess, double D_min, double D_max, double beta_min, double beta_max)
+FitResult fit_voxel_sub_ml(const std::array<double, 9> &svec, const std::array<double, 9> &bvec, double D_guess, double beta_guess, double D_min, double D_max, double beta_min, double beta_max)
 {
-    if (Svec[0] <= 0)
+    if (svec[0] <= 0)
     {
         return {0, 0, 0};
     }
@@ -44,7 +44,7 @@ FitResult fit_voxel_sub_ml(const std::array<double, 9> &Svec, const std::array<d
     {
         problem.AddResidualBlock(
             new ceres::NumericDiffCostFunction<SubMlResidual, ceres::CENTRAL, 1, 2>(
-                new SubMlResidual{bvec[i], Svec[i], Svec[0]}),
+                new SubMlResidual{bvec[i], svec[i], svec[0]}),
             nullptr, p);
     }
 

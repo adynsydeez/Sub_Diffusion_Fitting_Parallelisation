@@ -17,6 +17,7 @@ add_executable(fit_sub
     fit_voxel_sub_ml.cpp
     mittag-leffler.cpp
     read_mri.cpp
+    save_map.cpp
 )
 
 target_link_libraries(fit_sub PRIVATE Ceres::ceres ZLIB::ZLIB)
