@@ -6,6 +6,8 @@
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
+#include <filesystem>
+#include <format>
 #include <string>
 #include <vector>
 
@@ -26,10 +28,53 @@ constexpr std::size_t NB = BVEC.size();
 constexpr double D_GUESS = 1e-3, D_MIN = 0.0, D_MAX = 3e-3;        // mm^2/s
 constexpr double BETA_GUESS = 0.5, BETA_MIN = 0.0, BETA_MAX = 1.0; // time fractional index
 
+constexpr std::size_t DEFAULT_SLICE = 73; // slice shown in --all mode (l = 73 in MATLAB)
+
+void print_usage(const char *prog)
+{
+    std::fprintf(stderr,
+                 "Usage: %s [--all | --slice N]\n"
+                 "  --all      fit every brain voxel (default; for speed testing)\n"
+                 "  --slice N  fit only axial slice N, numbered from 1 as in MATLAB (for visual checks)\n",
+                 prog);
+}
+
 int main(int argc, char *argv[])
 {
-    (void)argc;
-    (void)argv;
+    // --- Command line ---
+    bool all_slices = true;
+    std::size_t slice = DEFAULT_SLICE; // 1-based, as in MATLAB
+
+    const std::string mode = argc > 1 ? argv[1] : "--all";
+    if (mode == "--all" && argc <= 2)
+    {
+        all_slices = true;
+    }
+    else if (mode == "--slice" && argc == 3)
+    {
+        const std::string arg = argv[2];
+        std::size_t pos = 0;
+        try
+        {
+            slice = std::stoul(arg, &pos);
+        }
+        catch (const std::exception &)
+        {
+            pos = 0;
+        }
+        if (pos == 0 || pos != arg.size() || arg[0] == '-')
+        {
+            std::fprintf(stderr, "Invalid slice number: %s\n", argv[2]);
+            print_usage(argv[0]);
+            return EXIT_FAILURE;
+        }
+        all_slices = false;
+    }
+    else
+    {
+        print_usage(argv[0]);
+        return EXIT_FAILURE;
+    }
 
     // --- Load data ---
     NiftiVolume mask = read_nifti(FOLDER + SUBJECT + "_" + DATATYPE + "_brainmask.nii.gz");
@@ -53,16 +98,29 @@ int main(int argc, char *argv[])
         }
     }
 
-    // nnz(S0 > 0)
-    std::size_t num_voxels = 0;
-    for (double v : S0.data)
+    if (slice < 1 || slice > L)
     {
-        if (v > 0)
+        std::fprintf(stderr, "Slice %zu is out of range: the volume has slices 1 to %zu\n", slice, L);
+        return EXIT_FAILURE;
+    }
+
+    // Slices to fit, as a 0-based range [l_begin, l_end)
+    const std::size_t l_begin = all_slices ? 0 : slice - 1;
+    const std::size_t l_end = all_slices ? L : slice;
+
+    // nnz(S0 > 0) over the slices being fitted
+    std::size_t num_voxels = 0;
+    for (std::size_t i = l_begin * X * Y; i < l_end * X * Y; ++i)
+    {
+        if (S0.data[i] > 0)
         {
             ++num_voxels;
         }
     }
-    std::printf("Fitting %zu brain voxels\n", num_voxels);
+    if (all_slices)
+        std::printf("Fitting %zu brain voxels (all %zu slices)\n", num_voxels, L);
+    else
+        std::printf("Fitting %zu brain voxels (slice %zu of %zu)\n", num_voxels, slice, L);
 
     // --- Output maps ---
     std::vector<double> D_SUB(X * Y * L, NAN);
@@ -72,7 +130,7 @@ int main(int argc, char *argv[])
     // --- Fit ---
     auto t_start = std::chrono::steady_clock::now();
 
-    for (std::size_t l = 0; l < L; ++l)
+    for (std::size_t l = l_begin; l < l_end; ++l)
     {
         for (std::size_t x = 0; x < X; ++x)
         {
@@ -114,11 +172,14 @@ int main(int argc, char *argv[])
     }
 
     // --- Parameter maps ---
-    const std::size_t l_show = 72; // axial slice to display (l = 73 in MATLAB)
-    save_map_png("D_SUB.png", D_SUB, X, Y, l_show, 0.0, 3e-3);
-    save_map_png("RMSE.png", ERROR_SUB, X, Y, l_show, 0.0, 0.1);
-    save_map_png("BETA.png", BETA_SUB, X, Y, l_show, 0.5, 1.0);
-    save_map_png("K_STAR.png", K_STAR, X, Y, l_show, 0.0, 3.0);
+    const std::size_t l_show = slice - 1; // axial slice to display, 0-based
+
+    const std::string save_path = std::format("serial_cpp/outputs/slice_{}/", slice);
+    std::filesystem::create_directories(save_path); // ofstream won't create missing folders
+    save_map_png(save_path + "D_SUB.png", D_SUB, X, Y, l_show, 0.0, 3e-3);
+    save_map_png(save_path + "RMSE.png", ERROR_SUB, X, Y, l_show, 0.0, 0.1);
+    save_map_png(save_path + "BETA.png", BETA_SUB, X, Y, l_show, 0.5, 1.0);
+    save_map_png(save_path + "K_STAR.png", K_STAR, X, Y, l_show, 0.0, 3.0);
     std::printf("Saved parameter maps for slice %zu\n", l_show + 1);
 
     // TODO: write results
