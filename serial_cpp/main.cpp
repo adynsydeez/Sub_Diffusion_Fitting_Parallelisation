@@ -176,10 +176,10 @@ int main(int argc, char *argv[])
 
     const std::string save_path = std::format("serial_cpp/outputs/slice_{}/", slice);
     std::filesystem::create_directories(save_path); // ofstream won't create missing folders
-    save_map_png(save_path + "D_SUB.png", D_SUB, X, Y, l_show, 0.0, 3e-3);
-    save_map_png(save_path + "RMSE.png", ERROR_SUB, X, Y, l_show, 0.0, 0.1);
-    save_map_png(save_path + "BETA.png", BETA_SUB, X, Y, l_show, 0.5, 1.0);
-    save_map_png(save_path + "K_STAR.png", K_STAR, X, Y, l_show, 0.0, 3.0);
+    save_map_png(save_path + "D_SUB.png", D_SUB, X, Y, l_show, 0.0, 3e-3, 5);
+    save_map_png(save_path + "RMSE.png", ERROR_SUB, X, Y, l_show, 0.0, 0.1, 5);
+    save_map_png(save_path + "BETA.png", BETA_SUB, X, Y, l_show, 0.5, 1.0, 5);
+    save_map_png(save_path + "K_STAR.png", K_STAR, X, Y, l_show, 0.0, 3.0, 5);
     std::printf("Saved parameter maps for slice %zu\n", l_show + 1);
 
     // TODO: write results
