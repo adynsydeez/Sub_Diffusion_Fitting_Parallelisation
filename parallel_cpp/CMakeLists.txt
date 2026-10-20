@@ -30,3 +30,27 @@ add_executable(fit_sub_cuda
 
 target_include_directories(fit_sub_cuda PRIVATE ${SERIAL_DIR})
 target_link_libraries(fit_sub_cuda PRIVATE CUDA::cudart ZLIB::ZLIB)
+
+# Checks the device Mittag-Leffler function against the serial one
+add_executable(test_ml
+    test_ml.cu
+    ${SERIAL_DIR}/mittag-leffler.cpp
+)
+target_include_directories(test_ml PRIVATE ${SERIAL_DIR})
+target_link_libraries(test_ml PRIVATE CUDA::cudart)
+
+# Compares the GPU fit with the serial Ceres fit on one slice (built only if Ceres is found)
+find_package(Ceres QUIET)
+if(Ceres_FOUND)
+    add_executable(compare_serial
+        compare_serial.cu
+        serial_fit.cpp
+        ${SERIAL_DIR}/fit_voxel_sub_ml.cpp
+        ${SERIAL_DIR}/mittag-leffler.cpp
+        ${SERIAL_DIR}/read_mri.cpp
+    )
+    target_include_directories(compare_serial PRIVATE ${SERIAL_DIR})
+    target_link_libraries(compare_serial PRIVATE CUDA::cudart Ceres::ceres ZLIB::ZLIB)
+else()
+    message(STATUS "Ceres not found: skipping compare_serial")
+endif()

@@ -12,21 +12,11 @@
 
 #include <cuda_runtime.h>
 
+#include "cuda_check.cuh"
+#include "fit_voxel_sub_ml.cuh"
+#include "mittag-leffler.cuh"
 #include "read_mri.h"
 #include "save_map.h"
-
-// Aborts with file/line on any CUDA runtime error
-#define CUDA_CHECK(call)                                                          \
-    do                                                                            \
-    {                                                                             \
-        cudaError_t err_ = (call);                                                \
-        if (err_ != cudaSuccess)                                                  \
-        {                                                                         \
-            std::fprintf(stderr, "CUDA error %s at %s:%d: %s\n", #call, __FILE__, \
-                         __LINE__, cudaGetErrorString(err_));                     \
-            std::exit(EXIT_FAILURE);                                              \
-        }                                                                         \
-    } while (0)
 
 // Configuration
 const std::string SUBJECT = "sub_001";
@@ -55,11 +45,10 @@ __global__ void fit_kernel(const double *svecs, int n, double *D, double *beta, 
 
     const double *svec = svecs + i * NB;
 
-    // TODO: device Mittag-Leffler + bounded Levenberg-Marquardt (Ceres doesn't run on the GPU)
-    (void)svec;
-    D[i] = NAN;
-    beta[i] = NAN;
-    err[i] = NAN;
+    const FitResult fit = fit_voxel_sub_ml<NB>(svec, d_bvec, D_GUESS, BETA_GUESS, D_MIN, D_MAX, BETA_MIN, BETA_MAX);
+    D[i] = fit.D;
+    beta[i] = fit.beta;
+    err[i] = fit.err;
 }
 
 int main()
@@ -119,6 +108,7 @@ int main()
     CUDA_CHECK(cudaMalloc(&d_err, n * sizeof(double)));
     CUDA_CHECK(cudaMemcpy(d_svecs, svecs.data(), svecs.size() * sizeof(double), cudaMemcpyHostToDevice));
     CUDA_CHECK(cudaMemcpyToSymbol(d_bvec, BVEC.data(), NB * sizeof(double)));
+    CUDA_CHECK(ml_device::init_ml_device());
 
     // --- Fit ---
     auto t_start = std::chrono::steady_clock::now();
