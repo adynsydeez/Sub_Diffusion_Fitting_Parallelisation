@@ -142,7 +142,7 @@ int main()
     }
 
     // --- Parameter maps ---
-    const std::string save_path = "parallel_cpp/outputs/slice_" + std::to_string(SLICE) + "/";
+    const std::string save_path = "cuda/outputs/slice_" + std::to_string(SLICE) + "/";
     std::filesystem::create_directories(save_path);
     save_map_png(save_path + "D_SUB.png", D_SUB, X, Y, SLICE - 1, 0.0, 3e-3, 5);
     save_map_png(save_path + "RMSE.png", ERROR_SUB, X, Y, SLICE - 1, 0.0, 0.1, 5);
