@@ -6,6 +6,9 @@
 // same function, gradient and parameter tolerances. The Jacobian is analytic (from
 // ml_device::ml) rather than Ceres's central differences, so results agree with the serial
 // version to within the fit tolerance, not bit for bit.
+//
+// Also compiles as plain C++: serial_cpp's fit_sub_best target runs it on one CPU core as
+// the "best sequential" baseline for the parallel speedup.
 
 #pragma once
 
@@ -29,12 +32,12 @@ namespace fit_device
     constexpr double MIN_RELATIVE_DECREASE = 1e-3; // smallest actual/predicted reduction accepted
     constexpr double MIN_DIAGONAL = 1e-6, MAX_DIAGONAL = 1e32;
 
-    __device__ inline double clamp(double x, double lo, double hi) { return fmin(fmax(x, lo), hi); }
+    ML_HD inline double clamp(double x, double lo, double hi) { return fmin(fmax(x, lo), hi); }
 
     // Residuals r_i = S0 * E_beta(-b_i * D) - S_i and their Jacobian, at p = [D, beta].
     // Returns the cost 0.5 * sum(r^2), as Ceres defines it.
     template <int NB>
-    __device__ double evaluate(const double p[2], const double *svec, const double *bvec,
+    ML_HD double evaluate(const double p[2], const double *svec, const double *bvec,
                                double r[NB], double J[NB][2])
     {
         double cost = 0;
@@ -51,7 +54,7 @@ namespace fit_device
 } // namespace fit_device
 
 template <int NB>
-__device__ FitResult fit_voxel_sub_ml(const double *svec, const double *bvec, double D_guess, double beta_guess,
+ML_HD FitResult fit_voxel_sub_ml(const double *svec, const double *bvec, double D_guess, double beta_guess,
                                       double D_min, double D_max, double beta_min, double beta_max)
 {
     using namespace fit_device;
