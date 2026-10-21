@@ -12,9 +12,19 @@
 #include <vector>
 
 #include "read_mri.h"
-#include "mittag-leffler.h"
-#include "fit_voxel_sub_ml.h"
 #include "save_map.h"
+
+// BEST_SEQUENTIAL (target fit_sub_best): the CUDA version's algorithm on one CPU core,
+// i.e. specialised Mittag-Leffler, analytic Jacobian and a small LM solver instead of Ceres
+#ifdef BEST_SEQUENTIAL
+#include "fit_voxel_sub_ml.cuh"
+constexpr const char *VARIANT = "best sequential";
+constexpr const char *OUTPUT_DIR = "serial_cpp/outputs_best";
+#else
+#include "fit_voxel_sub_ml.h"
+constexpr const char *VARIANT = "serial, Ceres";
+constexpr const char *OUTPUT_DIR = "serial_cpp/outputs";
+#endif
 
 // Configuration
 const std::string SUBJECT = "sub_001";
@@ -117,6 +127,7 @@ int main(int argc, char *argv[])
             ++num_voxels;
         }
     }
+    std::printf("Variant: %s\n", VARIANT);
     if (all_slices)
         std::printf("Fitting %zu brain voxels (all %zu slices)\n", num_voxels, L);
     else
@@ -150,7 +161,11 @@ int main(int argc, char *argv[])
                     svec[k] = S[idx + k * X * Y * L] / S0.data[idx];
                 }
 
+#ifdef BEST_SEQUENTIAL
+                auto [D, beta, err] = fit_voxel_sub_ml<NB>(svec.data(), BVEC.data(), D_GUESS, BETA_GUESS, D_MIN, D_MAX, BETA_MIN, BETA_MAX);
+#else
                 auto [D, beta, err] = fit_voxel_sub_ml(svec, BVEC, D_GUESS, BETA_GUESS, D_MIN, D_MAX, BETA_MIN, BETA_MAX);
+#endif
                 D_SUB[idx] = D;
                 BETA_SUB[idx] = beta;
                 ERROR_SUB[idx] = err;
@@ -174,7 +189,7 @@ int main(int argc, char *argv[])
     // --- Parameter maps ---
     const std::size_t l_show = slice - 1; // axial slice to display, 0-based
 
-    const std::string save_path = std::format("serial_cpp/outputs/slice_{}/", slice);
+    const std::string save_path = std::format("{}/slice_{}/", OUTPUT_DIR, slice);
     std::filesystem::create_directories(save_path); // ofstream won't create missing folders
     save_map_png(save_path + "D_SUB.png", D_SUB, X, Y, l_show, 0.0, 3e-3, 5);
     save_map_png(save_path + "RMSE.png", ERROR_SUB, X, Y, l_show, 0.0, 0.1, 5);
