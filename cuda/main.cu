@@ -30,7 +30,7 @@ constexpr int NB = BVEC.size();
 constexpr double D_GUESS = 1e-3, D_MIN = 0.0, D_MAX = 3e-3;        // mm^2/s
 constexpr double BETA_GUESS = 0.5, BETA_MIN = 0.0, BETA_MAX = 1.0; // time fractional index
 
-constexpr std::size_t SLICE = 73; // slice saved as PNG, numbered from 1 as in MATLAB
+constexpr std::size_t DEFAULT_SLICE = 73; // slice saved as PNG in --all mode, numbered from 1 as in MATLAB
 
 __constant__ double d_bvec[NB];
 
@@ -51,8 +51,52 @@ __global__ void fit_kernel(const double *svecs, int n, double *D, double *beta, 
     err[i] = fit.err;
 }
 
-int main()
+void print_usage(const char *prog)
 {
+    std::fprintf(stderr,
+                 "Usage: %s [--all | --slice N]\n"
+                 "  --all      fit every brain voxel (default; for speed testing)\n"
+                 "  --slice N  fit only axial slice N, numbered from 1 as in MATLAB (for visual checks)\n",
+                 prog);
+}
+
+int main(int argc, char *argv[])
+{
+    // --- Command line (same options as the serial version) ---
+    bool all_slices = true;
+    std::size_t slice = DEFAULT_SLICE; // 1-based, as in MATLAB
+
+    const std::string mode = argc > 1 ? argv[1] : "--all";
+    if (mode == "--all" && argc <= 2)
+    {
+        all_slices = true;
+    }
+    else if (mode == "--slice" && argc == 3)
+    {
+        const std::string arg = argv[2];
+        std::size_t pos = 0;
+        try
+        {
+            slice = std::stoul(arg, &pos);
+        }
+        catch (const std::exception &)
+        {
+            pos = 0;
+        }
+        if (pos == 0 || pos != arg.size() || arg[0] == '-')
+        {
+            std::fprintf(stderr, "Invalid slice number: %s\n", argv[2]);
+            print_usage(argv[0]);
+            return EXIT_FAILURE;
+        }
+        all_slices = false;
+    }
+    else
+    {
+        print_usage(argv[0]);
+        return EXIT_FAILURE;
+    }
+
     // --- Device info ---
     int device = 0;
     cudaDeviceProp prop;
@@ -82,10 +126,20 @@ int main()
         }
     }
 
-    // --- Pack brain voxels into a dense array of normalised signals ---
+    if (slice < 1 || slice > L)
+    {
+        std::fprintf(stderr, "Slice %zu is out of range: the volume has slices 1 to %zu\n", slice, L);
+        return EXIT_FAILURE;
+    }
+
+    // Slices to fit, as a 0-based range [l_begin, l_end)
+    const std::size_t l_begin = all_slices ? 0 : slice - 1;
+    const std::size_t l_end = all_slices ? L : slice;
+
+    // --- Pack brain voxels in those slices into a dense array of normalised signals ---
     std::vector<std::size_t> voxel_idx; // position of each packed voxel in the volume
     std::vector<double> svecs;
-    for (std::size_t idx = 0; idx < V; ++idx)
+    for (std::size_t idx = l_begin * X * Y; idx < l_end * X * Y; ++idx)
     {
         if (S0.data[idx] <= 0.0)
         {
@@ -98,7 +152,10 @@ int main()
         }
     }
     const int n = static_cast<int>(voxel_idx.size());
-    std::printf("Fitting %d brain voxels (all %zu slices)\n", n, L);
+    if (all_slices)
+        std::printf("Fitting %d brain voxels (all %zu slices)\n", n, L);
+    else
+        std::printf("Fitting %d brain voxels (slice %zu of %zu)\n", n, slice, L);
 
     // --- Copy to device ---
     double *d_svecs, *d_D, *d_beta, *d_err;
@@ -142,12 +199,12 @@ int main()
     }
 
     // --- Parameter maps ---
-    const std::string save_path = "cuda/outputs/slice_" + std::to_string(SLICE) + "/";
+    const std::string save_path = "cuda/outputs/slice_" + std::to_string(slice) + "/";
     std::filesystem::create_directories(save_path);
-    save_map_png(save_path + "D_SUB.png", D_SUB, X, Y, SLICE - 1, 0.0, 3e-3, 5);
-    save_map_png(save_path + "RMSE.png", ERROR_SUB, X, Y, SLICE - 1, 0.0, 0.1, 5);
-    save_map_png(save_path + "BETA.png", BETA_SUB, X, Y, SLICE - 1, 0.5, 1.0, 5);
-    std::printf("Saved parameter maps for slice %zu\n", SLICE);
+    save_map_png(save_path + "D_SUB.png", D_SUB, X, Y, slice - 1, 0.0, 3e-3, 5);
+    save_map_png(save_path + "RMSE.png", ERROR_SUB, X, Y, slice - 1, 0.0, 0.1, 5);
+    save_map_png(save_path + "BETA.png", BETA_SUB, X, Y, slice - 1, 0.5, 1.0, 5);
+    std::printf("Saved parameter maps for slice %zu\n", slice);
 
     return EXIT_SUCCESS;
 }
