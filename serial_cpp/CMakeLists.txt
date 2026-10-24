@@ -31,4 +31,7 @@ add_executable(fit_sub_best
 )
 target_compile_definitions(fit_sub_best PRIVATE BEST_SEQUENTIAL)
 target_include_directories(fit_sub_best PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../cuda)
-target_link_libraries(fit_sub_best PRIVATE ZLIB::ZLIB)
+
+# OpenMP for --threads N (CPU scaling); with --threads 1 (the default) it is the best sequential
+find_package(OpenMP REQUIRED)
+target_link_libraries(fit_sub_best PRIVATE ZLIB::ZLIB OpenMP::OpenMP_CXX)

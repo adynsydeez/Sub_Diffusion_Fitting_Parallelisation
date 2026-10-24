@@ -1,0 +1,89 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Original Sequential Application}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Overview}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Inputs.}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Model.}{1}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Outputs.}{1}{section*.3}\protected@file@percent }
+\citation{garrappa2015}
+\citation{ceres}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Program Structure}{2}{subsection.2.2}\protected@file@percent }
+\newlabel{lst:matlab-loop}{{1}{2}{Original voxel loop (\texttt {fit\_dMRI\_signals\_19.m})}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Original voxel loop (\texttt  {fit\_dMRI\_signals\_19.m})}}{2}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{C++ port.}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Profiling the Sequential Version}{2}{section.3}\protected@file@percent }
+\newlabel{sec:profiling}{{3}{2}{Profiling the Sequential Version}{section.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Sequential baselines.}}{2}{table.caption.5}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:seq}{{1}{2}{Sequential baselines}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{MATLAB Profiler.}{3}{section*.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces MATLAB Profiler, slice 73 (29.5\,s with profiling enabled).}}{3}{table.caption.7}\protected@file@percent }
+\newlabel{tab:matlab-prof}{{2}{3}{MATLAB Profiler, slice 73 (29.5\,s with profiling enabled)}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{C++ (Ceres) profile.}{3}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hotspot.}{3}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Analysis of Potential Parallelism}{3}{section.4}\protected@file@percent }
+\newlabel{sec:analysis}{{4}{3}{Analysis of Potential Parallelism}{section.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{1. The voxel loop.}{3}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{2. The solver iterations.}{3}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{3. Residual and Jacobian evaluation.}{4}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{4. The contour sum in \texttt  {ml}.}{4}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Choice and required restructuring.}{4}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Parallel Design: Mapping and Synchronisation}{4}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CPU (OpenMP).}{4}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{GPU (CUDA).}{4}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SM-limited kernel for scaling.}{5}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Tools and Technologies}{5}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Used.}{5}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Considered but not used.}{5}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Overcoming Performance Barriers}{6}{section.7}\protected@file@percent }
+\newlabel{sec:barriers}{{7}{6}{Overcoming Performance Barriers}{section.7}{}}
+\newlabel{lst:ml-before}{{2}{6}{Before: general Mittag-Leffler evaluation (excerpt of \texttt {lt\_inversion}, called 945 times per voxel)}{lstlisting.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Before: general Mittag-Leffler evaluation (excerpt of \texttt  {lt\_inversion}, called 945 times per voxel)}}{6}{lstlisting.2}\protected@file@percent }
+\newlabel{lst:ml-after}{{3}{6}{After: specialised evaluation with analytic derivatives (\texttt {ml\_device::ml}, shared by CPU and GPU)}{lstlisting.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces After: specialised evaluation with analytic derivatives (\texttt  {ml\_device::ml}, shared by CPU and GPU)}}{6}{lstlisting.3}\protected@file@percent }
+\newlabel{lst:hd}{{4}{7}{One source for CPU and GPU (\texttt {mittag-leffler.cuh})}{lstlisting.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}{\ignorespaces One source for CPU and GPU (\texttt  {mittag-leffler.cuh})}}{7}{lstlisting.4}\protected@file@percent }
+\newlabel{lst:omp}{{5}{7}{After: flattened, dynamically scheduled voxel loop (\texttt {serial\_cpp/main.cpp})}{lstlisting.5}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}{\ignorespaces After: flattened, dynamically scheduled voxel loop (\texttt  {serial\_cpp/main.cpp})}}{7}{lstlisting.5}\protected@file@percent }
+\newlabel{lst:sms}{{6}{8}{SM-limited persistent kernel with an atomic work queue (\texttt {cuda/main.cu})}{lstlisting.6}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}{\ignorespaces SM-limited persistent kernel with an atomic work queue (\texttt  {cuda/main.cu})}}{8}{lstlisting.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Results}{9}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Timing, Profiling and Speedup}{9}{subsection.8.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Fit time for the whole brain (180,722 voxels); each version run alone.}}{9}{table.caption.28}\protected@file@percent }
+\newlabel{tab:results}{{3}{9}{Fit time for the whole brain (180,722 voxels); each version run alone}{table.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Strong scaling, whole brain. Speedup relative to the best sequential version on one CPU core (5.24\,s, median of five runs). Data: \texttt  {scaling/scaling.csv}.}}{9}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:speedup}{{1}{9}{Strong scaling, whole brain. Speedup relative to the best sequential version on one CPU core (5.24\,s, median of five runs). Data: \texttt {scaling/scaling.csv}}{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {paragraph}{CPU.}{9}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{GPU.}{10}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Profile after parallelisation.}{10}{section*.32}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces CUDA kernel profile.}}{10}{table.caption.33}\protected@file@percent }
+\newlabel{tab:ncu}{{4}{10}{CUDA kernel profile}{table.caption.33}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Verifying Correctness}{10}{subsection.8.2}\protected@file@percent }
+\newlabel{sec:verify}{{8.2}{10}{Verifying Correctness}{subsection.8.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Fraction of voxels within tolerance ($D$ within 1\%, $\beta $ within 0.01, RMSE within 1\%).}}{10}{table.caption.34}\protected@file@percent }
+\newlabel{tab:verify}{{5}{10}{Fraction of voxels within tolerance ($D$ within 1\%, $\beta $ within 0.01, RMSE within 1\%)}{table.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Bland-Altman agreement with the original MATLAB fit, whole brain (180,722 voxels): difference against mean for $D$ (left column) and $\beta $ (right column), for the Ceres port, the best sequential version and CUDA. Solid line: bias; dashed: 95\% limits of agreement. Almost all voxels lie in the thin band at zero. The diagonal lines are voxels where one method placed $\beta $ (or $D$) on a bound: if one value is 0, the point must lie on difference $= \pm 2 \times $ mean, and if one is 1, on difference $= \pm (2 - 2 \times $ mean$)$. These are poorly determined voxels (see text).}}{11}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:ba}{{2}{11}{Bland-Altman agreement with the original MATLAB fit, whole brain (180,722 voxels): difference against mean for $D$ (left column) and $\beta $ (right column), for the Ceres port, the best sequential version and CUDA. Solid line: bias; dashed: 95\% limits of agreement. Almost all voxels lie in the thin band at zero. The diagonal lines are voxels where one method placed $\beta $ (or $D$) on a bound: if one value is 0, the point must lie on difference $= \pm 2 \times $ mean, and if one is 1, on difference $= \pm (2 - 2 \times $ mean$)$. These are poorly determined voxels (see text)}{figure.caption.35}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Slice 73. Left: original MATLAB maps. Right: differences between versions (blue lower, red higher, grey equal). OpenMP and CUDA are indistinguishable from the best sequential version.}}{11}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:maps}{{3}{11}{Slice 73. Left: original MATLAB maps. Right: differences between versions (blue lower, red higher, grey equal). OpenMP and CUDA are indistinguishable from the best sequential version}{figure.caption.36}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Summary of Code Changes}{12}{section.9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Size of each component (code lines exclude blank lines and comments).}}{12}{table.caption.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Reflection}{12}{section.10}\protected@file@percent }
+\newlabel{sec:reflection}{{10}{12}{Reflection}{section.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{What was learnt.}{12}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{How successful.}{12}{section*.39}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Could it be better?}{12}{section*.40}\protected@file@percent }
+\bibcite{garrappa2015}{1}
+\bibcite{ceres}{2}
+\bibcite{cuda}{3}
+\@writefile{toc}{\contentsline {paragraph}{What I would do differently.}{13}{section*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Build and Run Instructions}{14}{section.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Serial, best sequential and OpenMP}{14}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CUDA}{14}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{MATLAB, comparison and scaling:}{14}{lstlisting.-4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Hardware Used}{14}{section.B}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Input Data Sets}{14}{section.C}\protected@file@percent }
+\gdef \@abspage@last{14}

@@ -1,0 +1,1091 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 80.88      2.03     2.03 11339676     0.00     0.00  ml_device::ml(double, double)
+  5.98      2.18     0.15                             _mcount_private
+  5.58      2.32     0.14                             sincos
+  2.39      2.38     0.06                             __fentry__
+  1.99      2.43     0.05   180722     0.00     0.01  FitResult fit_voxel_sub_ml<9>(double const*, double const*, double, double, double, double, double, double)
+  1.20      2.46     0.03  1259964     0.00     0.00  double fit_device::evaluate<9>(double const*, double const*, double const*, double*, double (*) [2])
+  0.40      2.47     0.01  6928439     0.00     0.00  NiftiVolume::size() const
+  0.40      2.48     0.01  6135634     0.00     0.00  read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.40      2.49     0.01                             (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&)
+  0.40      2.50     0.01                             main
+  0.40      2.51     0.01                             sin
+  0.00      2.51     0.00 31422177     0.00     0.00  __gcc_deregister_frame
+  0.00      2.51     0.00 15397222     0.00     0.00  parse_count(char const*, unsigned long long&)
+  0.00      2.51     0.00  6843583     0.00     0.00  fit_device::clamp(double, double, double)
+  0.00      2.51     0.00  1626498     0.00     0.00  std::array<double, 9ull>::operator[](unsigned long long)
+  0.00      2.51     0.00  1426192     0.00     0.00  std::move_iterator<unsigned char*>::base() const &
+  0.00      2.51     0.00  1425672     0.00     0.00  std::move_iterator<unsigned char*>::move_iterator(unsigned char*)
+  0.00      2.51     0.00  1425640     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::end()
+  0.00      2.51     0.00  1425624     0.00     0.00  std::move_iterator<unsigned char*> std::make_move_iterator<unsigned char*>(unsigned char*)
+  0.00      2.51     0.00  1425600     0.00     0.00  unsigned char* std::__miter_base<unsigned char*>(unsigned char*)
+  0.00      2.51     0.00  1281600     0.00     0.00  double const& std::max<double>(double const&, double const&)
+  0.00      2.51     0.00  1281600     0.00     0.00  double const& std::min<double>(double const&, double const&)
+  0.00      2.51     0.00  1281600     0.00     0.00  double const& std::clamp<double>(double const&, double const&, double const&)
+  0.00      2.51     0.00   769824     0.00     0.00  __gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+  0.00      2.51     0.00   713096     0.00     0.00  bool std::operator==<unsigned char*>(std::move_iterator<unsigned char*> const&, std::move_iterator<unsigned char*> const&)
+  0.00      2.51     0.00   712836     0.00     0.00  unsigned char* std::__do_uninit_copy<std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*)
+  0.00      2.51     0.00   712836     0.00     0.00  unsigned char* std::uninitialized_copy<std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*)
+  0.00      2.51     0.00   712828     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::cbegin() const
+  0.00      2.51     0.00   712828     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::begin()
+  0.00      2.51     0.00   712800     0.00     0.00  unsigned char* std::__copy_move_a2<false, unsigned char*, unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*)
+  0.00      2.51     0.00   712800     0.00     0.00  unsigned char* std::uninitialized_copy<unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*)
+  0.00      2.51     0.00   712800     0.00     0.00  std::isnan(double)
+  0.00      2.51     0.00   180722     0.00     0.00  std::array<double, 9ull>::data() const
+  0.00      2.51     0.00     2288     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&)
+  0.00      2.51     0.00     2288     0.00     0.00  _ZSt12construct_atIhJhEQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S0_pispcl7declvalIT0_EEEEEPS0_S3_DpOS2_
+  0.00      2.51     0.00     2160     0.00     0.00  std::array<unsigned char, 3ull>::end()
+  0.00      2.51     0.00     2160     0.00     0.00  std::array<unsigned char, 3ull>::begin()
+  0.00      2.51     0.00      414     0.00     0.00  write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&)
+  0.00      2.51     0.00      260     0.00     0.00  std::move_iterator<unsigned char*>::operator*() const
+  0.00      2.51     0.00      177     0.00     0.00  unsigned long long const& std::min<unsigned long long>(unsigned long long const&, unsigned long long const&)
+  0.00      2.51     0.00      104     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::max_size() const
+  0.00      2.51     0.00       60     0.00     0.00  std::_Head_base<0ull, gzFile_s*, false>::_M_head(std::_Head_base<0ull, gzFile_s*, false>&)
+  0.00      2.51     0.00       60     0.00     0.00  unsigned long long const& std::max<unsigned long long>(unsigned long long const&, unsigned long long const&)
+  0.00      2.51     0.00       50     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const
+  0.00      2.51     0.00       48     0.00     0.00  std::move_iterator<unsigned char*> std::__make_move_if_noexcept_iterator<unsigned char, std::move_iterator<unsigned char*> >(unsigned char*)
+  0.00      2.51     0.00       38     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::_Guard_alloc::_Guard_alloc(unsigned char*, unsigned long long, std::_Vector_base<unsigned char, std::allocator<unsigned char> >&)
+  0.00      2.51     0.00       30     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::~vector()
+  0.00      2.51     0.00       28     0.00     0.00  void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_append<unsigned char>(unsigned char&&)
+  0.00      2.51     0.00       28     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, char const*)
+  0.00      2.51     0.00       25     0.00     0.00  std::__size_to_integer(unsigned long long)
+  0.00      2.51     0.00       24     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::resize(unsigned long long)
+  0.00      2.51     0.00       24     0.00     0.00  char const* std::__miter_base<char const*>(char const*)
+  0.00      2.51     0.00       20     0.00     0.00  std::vector<double, std::allocator<double> >::max_size() const
+  0.00      2.51     0.00       17     0.00     0.00  std::char_traits<char>::length(char const*)
+  0.00      2.51     0.00       15     0.00     0.00  std::vector<double, std::allocator<double> >::~vector()
+  0.00      2.51     0.00       14     0.00     0.00  unsigned char* std::__uninitialized_default_n_1<true>::__uninit_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long)
+  0.00      2.51     0.00       14     0.00     0.00  void std::_Construct<unsigned char>(unsigned char*)
+  0.00      2.51     0.00       14     0.00     0.00  unsigned char* std::__uninitialized_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long)
+  0.00      2.51     0.00       12     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::end() const
+  0.00      2.51     0.00       12     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::begin() const
+  0.00      2.51     0.00       12     0.00     0.00  std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data::_Vector_impl_data()
+  0.00      2.51     0.00       12     0.00     0.00  unsigned char* std::__copy_move_a2<false, char const*, char const*, unsigned char*>(char const*, char const*, unsigned char*)
+  0.00      2.51     0.00       12     0.00     0.00  unsigned char* std::uninitialized_copy<char const*, unsigned char*>(char const*, char const*, unsigned char*)
+  0.00      2.51     0.00       11     0.00     0.00  double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long long>(double*, unsigned long long)
+  0.00      2.51     0.00       11     0.00     0.00  void std::_Construct<double>(double*)
+  0.00      2.51     0.00       11     0.00     0.00  double* std::__uninitialized_default_n<double*, unsigned long long>(double*, unsigned long long)
+  0.00      2.51     0.00       10     0.00     0.00  NiftiVolume::~NiftiVolume()
+  0.00      2.51     0.00       10     0.00     0.00  std::vector<double, std::allocator<double> >::_M_check_len(unsigned long long, char const*) const
+  0.00      2.51     0.00       10     0.00     0.00  std::_Head_base<0ull, gzFile_s*, false>::_Head_base()
+  0.00      2.51     0.00       10     0.00     0.00  std::vector<double, std::allocator<double> >::_Guard_alloc::_Guard_alloc(double*, unsigned long long, std::_Vector_base<double, std::allocator<double> >&)
+  0.00      2.51     0.00       10     0.00     0.00  std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long)
+  0.00      2.51     0.00       10     0.00     0.00  std::vector<double, std::allocator<double> >::resize(unsigned long long)
+  0.00      2.51     0.00       10     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long)
+  0.00      2.51     0.00       10     0.00     0.00  std::isfinite(float)
+  0.00      2.51     0.00       10     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      2.51     0.00       10     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      2.51     0.00        9     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00      2.51     0.00        8     0.00     0.00  std::array<double, 9ull>::operator[](unsigned long long) const
+  0.00      2.51     0.00        8     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::__resize_and_overwrite<std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}>(unsigned long long, std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1})
+  0.00      2.51     0.00        8     0.00     0.00  std::__cxx11::to_string(int)
+  0.00      2.51     0.00        8     0.00     0.00  unsigned int std::__detail::__to_chars_len<unsigned int>(unsigned int, int)
+  0.00      2.51     0.00        8     0.00     0.00  void std::__detail::__to_chars_10_impl<unsigned int>(char*, unsigned int, unsigned int)
+  0.00      2.51     0.00        8     0.00     0.00  unsigned char* std::uninitialized_copy<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*)
+  0.00      2.51     0.00        8     0.00     0.00  unsigned char* std::uninitialized_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
+  0.00      2.51     0.00        8     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  0.00      2.51     0.00        8     0.00     0.00  std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}::operator()(char*, unsigned long long) const
+  0.00      2.51     0.00        5     0.00     0.00  std::_Vector_base<double, std::allocator<double> >::_M_create_storage(unsigned long long)
+  0.00      2.51     0.00        5     0.00     0.00  std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_Vector_impl_data()
+  0.00      2.51     0.00        4     0.00     1.34  save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int)
+  0.00      2.51     0.00        4     0.00     0.00  std::span<char, 18446744073709551615ull>::begin() const
+  0.00      2.51     0.00        4     0.00     0.00  std::array<std::__format::_Arg_t, 2ull>::data() const
+  0.00      2.51     0.00        4     0.00     0.00  _ZNSt12_Vector_baseIhSaIhEE12_Vector_implC1EvQ26is_default_constructible_vIN9__gnu_cxx14__alloc_traitsIT0_NS5_10value_typeEE6rebindIT_E5otherEE
+  0.00      2.51     0.00        4     0.00     0.00  std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long long)
+  0.00      2.51     0.00        4     0.00     0.00  std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base()
+  0.00      2.51     0.00        4     0.00     0.00  std::reverse_iterator<std::__format::_Arg_t const*>::reverse_iterator(std::__format::_Arg_t const*)
+  0.00      2.51     0.00        4     0.00     0.00  std::vector<double, std::allocator<double> >::_M_fill_initialize(unsigned long long, double const&)
+  0.00      2.51     0.00        4     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::_M_erase_at_end(unsigned char*)
+  0.00      2.51     0.00        4     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_initialize(unsigned long long)
+  0.00      2.51     0.00        4     0.00     0.00  void std::vector<unsigned char, std::allocator<unsigned char> >::_M_range_initialize_n<unsigned char const*, unsigned char const*>(unsigned char const*, unsigned char const*, unsigned long long)
+  0.00      2.51     0.00        4     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::reserve(unsigned long long)
+  0.00      2.51     0.00        4     0.00     0.00  std::vector<unsigned char, std::allocator<unsigned char> >::vector()
+  0.00      2.51     0.00        4     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*)
+  0.00      2.51     0.00        4     0.00     0.00  double* std::__do_uninit_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&)
+  0.00      2.51     0.00        4     0.00     0.00  double* std::uninitialized_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&)
+  0.00      2.51     0.00        4     0.00     0.00  bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00      2.51     0.00        3     0.00     0.00  std::span<char, 18446744073709551615ull>::size() const
+  0.00      2.51     0.00        3     0.00     0.00  std::array<std::__format::_Arg_t, 2ull>::rend() const
+  0.00      2.51     0.00        3     0.00     0.00  std::array<std::__format::_Arg_t, 2ull>::begin() const
+  0.00      2.51     0.00        3     0.00     0.00  std::char_traits<char>::compare(char const*, char const*, unsigned long long)
+  0.00      2.51     0.00        3     0.00     0.00  _ZSteqIPKNSt8__format6_Arg_tEEbRKSt16reverse_iteratorIT_ES8_QrqXeqcldtfL0p_4baseEcldtfL0p0_4baseERSt14convertible_toIbEE
+  0.00      2.51     0.00        2     0.00     0.00  void std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::_M_set<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >)
+  0.00      2.51     0.00        2     0.00     0.00  std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_arg<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+  0.00      2.51     0.00        2     0.00     0.00  std::basic_string_view<char, std::char_traits<char> >::basic_string_view(char const*, unsigned long long)
+  0.00      2.51     0.00        2     0.00     0.00  std::span<char, 18446744073709551615ull>::span<char*>(char*, unsigned long long)
+  0.00      2.51     0.00        2     0.00     0.00  std::vector<double, std::allocator<double> >::begin()
+  0.00      2.51     0.00        2     0.00     0.00  std::__format::_Arg_value<std::basic_format_context<std::__format::_Sink_iter<char>, char> > std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >::_S_make_elt<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+  0.00      2.51     0.00        2     0.00     0.00  __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::__miter_base<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >)
+  0.00      2.51     0.00        2     0.00     0.00  _ZSt12construct_atISt17basic_string_viewIcSt11char_traitsIcEEJRS3_EQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S5_pispcl7declvalIT0_EEEEEPS5_S8_DpOS7_
+  0.00      2.51     0.00        1     0.00     0.00  std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::max_length() const
+  0.00      2.51     0.00        1     0.00     0.00  std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::in(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const
+  0.00      2.51     0.00        1     0.00     0.00  std::span<char, 18446744073709551615ull>::empty() const
+  0.00      2.51     0.00        1     0.00     0.00  std::array<std::__format::_Arg_t, 2ull>::end() const
+  0.00      2.51     0.00        1     0.00     0.00  std::array<std::__format::_Arg_t, 2ull>::rbegin() const
+  0.00      2.51     0.00        1     0.00     0.00  std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::get() &&
+  0.00      2.51     0.00        1     0.00     0.00  std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>::_M_head(std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>&)
+  0.00      2.51     0.00        1     0.00     0.00  std::_Head_base<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter, true>::_M_head(std::_Head_base<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter, true>&)
+  0.00      2.51     0.00        1     0.00     0.00  auto std::filesystem::__cxx11::path::_S_convert<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >)
+  0.00      2.51     0.00        1     0.00     0.00  auto std::filesystem::__cxx11::path::_S_convert<char>(char const*, char const*)
+  0.00      2.51     0.00        1     0.00     0.00  std::filesystem::__cxx11::path::_List::~_List()
+  0.00      2.51     0.00        1     0.00     0.00  std::filesystem::__cxx11::path::_Codecvt<wchar_t>::_Codecvt()
+  0.00      2.51     0.00        1     0.00     0.00  std::filesystem::__cxx11::path::_Codecvt<wchar_t>::~_Codecvt()
+  0.00      2.51     0.00        1     0.00     0.00  std::filesystem::__cxx11::path::~path()
+  0.00      2.51     0.00        1     0.00     0.00  std::basic_string_view<char, std::char_traits<char> > std::filesystem::__cxx11::__detail::__effective_range<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      2.51     0.00        1     0.00     0.00  std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::get_deleter()
+  0.00      2.51     0.00        1     0.00     0.00  std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr()
+  0.00      2.51     0.00        1     0.00     0.00  std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head(std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+  0.00      2.51     0.00        1     0.00     0.00  std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head(std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+  0.00      2.51     0.00        1     0.00     0.00  std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_deleter()
+  0.00      2.51     0.00        1     0.00     0.00  std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_ptr()
+  0.00      2.51     0.00        1     0.00     0.00  std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_args<std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >(std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > > const&)
+  0.00      2.51     0.00        1     0.00     0.00  std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::codecvt_utf8_utf16(unsigned long long)
+  0.00      2.51     0.00        1     0.00     0.00  std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::~codecvt_utf8_utf16()
+  0.00      2.51     0.00        1     0.00     0.00  std::basic_format_context<std::__format::_Sink_iter<char>, char>::basic_format_context(std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >, std::__format::_Sink_iter<char>)
+  0.00      2.51     0.00        1     0.00     0.00  std::basic_format_context<std::__format::_Sink_iter<char>, char>::~basic_format_context()
+  0.00      2.51     0.00        1     0.00     0.00  std::__codecvt_utf8_utf16_base<wchar_t>::__codecvt_utf8_utf16_base(unsigned long, std::codecvt_mode, unsigned long long)
+  0.00      2.51     0.00        1     0.00     0.00  std::span<char, 18446744073709551615ull>::span<256ull>(char (&) [256ull])
+  0.00      2.51     0.00        1     0.00     0.00  std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long long)
+  0.00      2.51     0.00        1     0.00     0.00  std::vector<double, std::allocator<double> >::end()
+  0.00      2.51     0.00        1     0.00     0.00  std::__format::_Optional_locale::~_Optional_locale()
+  0.00      2.51     0.00        1     0.00     0.00  auto std::__format::__pack_arg_types<5, 2ull>(std::array<std::__format::_Arg_t, 2ull> const&)
+  0.00      2.51     0.00        1     0.00     0.00  std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow()
+  0.00      2.51     0.00        1     0.00     0.00  std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::~_Seq_sink()
+  0.00      2.51     0.00        1     0.00     0.00  std::filesystem::__cxx11::path::_List::_Impl*& std::__get_helper<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+  0.00      2.51     0.00        1     0.00     0.00  std::filesystem::__cxx11::path::_List::_Impl_deleter& std::__get_helper<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+  0.00      2.51     0.00        1     0.00     0.00  double* std::__copy_move_a2<false, double*, double*, double*>(double*, double*, double*)
+  0.00      2.51     0.00        1     0.00     0.00  bool std::__do_str_codecvt<std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >, char, std::codecvt<wchar_t, char, _Mbstatet>, _Mbstatet, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const)
+  0.00      2.51     0.00        1     0.00     0.00  bool std::__str_codecvt_in<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&)
+  0.00      2.51     0.00        1     0.00     0.00  bool std::__str_codecvt_in_all<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&)
+  0.00      2.51     0.00        1     0.00     0.00  std::tuple_element<0ull, std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter> >::type& std::get<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+  0.00      2.51     0.00        1     0.00     0.00  std::tuple_element<1ull, std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter> >::type& std::get<1ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+  0.00      2.51     0.00        1     0.00     0.00  unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+  0.00      2.51     0.00        1     0.00     0.00  __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::copy<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >)
+  0.00      2.51     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::format<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::basic_format_string<char, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::type>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  0.00      2.51     0.00        1     0.00     0.00  std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >)
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.40% of 2.51 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     85.1    0.01    2.13                 main [1]
+                0.05    2.06  180722/180722      FitResult fit_voxel_sub_ml<9>(double const*, double const*, double, double, double, double, double, double) [2]
+                0.01    0.00 6928425/6928439     NiftiVolume::size() const [12]
+                0.00    0.01       4/4           save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+                0.00    0.00      10/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00       4/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00 25263439/31422177     __gcc_deregister_frame [115]
+                0.00    0.00 1626498/1626498     std::array<double, 9ull>::operator[](unsigned long long) [118]
+                0.00    0.00  769824/769824      __gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int) [127]
+                0.00    0.00  180722/180722      std::array<double, 9ull>::data() const [135]
+                0.00    0.00      28/28          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, char const*) [148]
+                0.00    0.00      15/15          std::vector<double, std::allocator<double> >::~vector() [154]
+                0.00    0.00      10/10          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [173]
+                0.00    0.00      10/10          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [172]
+                0.00    0.00      10/10          NiftiVolume::~NiftiVolume() [166]
+                0.00    0.00       9/9           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [174]
+                0.00    0.00       8/8           std::array<double, 9ull>::operator[](unsigned long long) const [175]
+                0.00    0.00       8/8           std::__cxx11::to_string(int) [177]
+                0.00    0.00       8/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [182]
+                0.00    0.00       6/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00       4/4           bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [198]
+                0.00    0.00       4/4           std::vector<double, std::allocator<double> >::_M_fill_initialize(unsigned long long, double const&) [191]
+                0.00    0.00       2/2           std::vector<double, std::allocator<double> >::begin() [208]
+                0.00    0.00       1/1           std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long long) [240]
+                0.00    0.00       1/1           std::vector<double, std::allocator<double> >::end() [241]
+                0.00    0.00       1/1           __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::copy<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >) [255]
+                0.00    0.00       1/1           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::format<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::basic_format_string<char, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::type>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [256]
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::~path() [225]
+-----------------------------------------------
+                0.05    2.06  180722/180722      main [1]
+[2]     84.1    0.05    2.06  180722         FitResult fit_voxel_sub_ml<9>(double const*, double const*, double, double, double, double, double, double) [2]
+                0.03    2.03 1259964/1259964     double fit_device::evaluate<9>(double const*, double const*, double const*, double*, double (*) [2]) [3]
+                0.00    0.00 6843583/6843583     fit_device::clamp(double, double, double) [117]
+-----------------------------------------------
+                0.03    2.03 1259964/1259964     FitResult fit_voxel_sub_ml<9>(double const*, double const*, double, double, double, double, double, double) [2]
+[3]     82.1    0.03    2.03 1259964         double fit_device::evaluate<9>(double const*, double const*, double const*, double*, double (*) [2]) [3]
+                2.03    0.00 11339676/11339676     ml_device::ml(double, double) [4]
+-----------------------------------------------
+                2.03    0.00 11339676/11339676     double fit_device::evaluate<9>(double const*, double const*, double const*, double*, double (*) [2]) [3]
+[4]     80.9    2.03    0.00 11339676         ml_device::ml(double, double) [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]      6.0    0.15    0.00                 _mcount_private [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      5.6    0.14    0.00                 sincos [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      2.4    0.06    0.00                 __fentry__ [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      0.6    0.01    0.00                 (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+                0.00    0.00 2851340/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00  712800/712836      unsigned char* std::__do_uninit_copy<std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [16]
+                0.00    0.00 1425600/1425600     unsigned char* std::__miter_base<unsigned char*>(unsigned char*) [123]
+                0.00    0.00  712824/1425640     std::vector<unsigned char, std::allocator<unsigned char> >::end() [121]
+                0.00    0.00  712800/712800      unsigned char* std::uninitialized_copy<unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*) [133]
+                0.00    0.00  712800/712836      unsigned char* std::uninitialized_copy<std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [129]
+                0.00    0.00  712800/712828      std::vector<unsigned char, std::allocator<unsigned char> >::cbegin() const [130]
+                0.00    0.00  712800/712828      std::vector<unsigned char, std::allocator<unsigned char> >::begin() [131]
+                0.00    0.00      12/12          unsigned char* std::__copy_move_a2<false, char const*, char const*, unsigned char*>(char const*, char const*, unsigned char*) [161]
+                0.00    0.00      12/12          std::vector<unsigned char, std::allocator<unsigned char> >::end() const [158]
+                0.00    0.00      12/12          std::vector<unsigned char, std::allocator<unsigned char> >::begin() const [159]
+-----------------------------------------------
+[9]      0.4    0.01    0.00 6135618+20      <cycle 1 as a whole> [9]
+                0.01    0.00 6135634+304         read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00       4             void std::vector<unsigned char, std::allocator<unsigned char> >::_M_range_initialize_n<unsigned char const*, unsigned char const*>(unsigned char const*, unsigned char const*, unsigned long long) <cycle 1> [193]
+-----------------------------------------------
+                                 304             read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                                  16             void std::vector<unsigned char, std::allocator<unsigned char> >::_M_range_initialize_n<unsigned char const*, unsigned char const*>(unsigned char const*, unsigned char const*, unsigned long long) <cycle 1> [193]
+                0.00    0.00       4/6135618     (anonymous namespace)::hot(double) [15]
+                0.00    0.00       4/6135618     std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_initialize(unsigned long long) [21]
+                0.00    0.00       8/6135618     std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long long) [20]
+                0.00    0.00      10/6135618     main [1]
+                0.00    0.00      28/6135618     std::vector<unsigned char, std::allocator<unsigned char> >::reserve(unsigned long long) [19]
+                0.00    0.00     216/6135618     void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_append<unsigned char>(unsigned char&&) [18]
+                0.00    0.00     292/6135618     (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00     780/6135618     unsigned char* std::__do_uninit_copy<std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [16]
+                0.00    0.00    2288/6135618     _ZSt12construct_atIhJhEQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S0_pispcl7declvalIT0_EEEEEPS0_S3_DpOS2_ [14]
+                0.00    0.00 2851340/6135618     (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+                0.01    0.00 3280648/6135618     save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[10]     0.4    0.01    0.00 6135634+304     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00      10/6928439     NiftiVolume::size() const [12]
+                0.00    0.00     140/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      10/10          std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [29]
+                0.00    0.00 15396680/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00      10/10          std::isfinite(float) [171]
+                0.00    0.00      10/10          std::vector<double, std::allocator<double> >::resize(unsigned long long) [170]
+                0.00    0.00      10/30          std::vector<unsigned char, std::allocator<unsigned char> >::~vector() [147]
+                0.00    0.00       8/177         unsigned long long const& std::min<unsigned long long>(unsigned long long const&, unsigned long long const&) [140]
+                0.00    0.00       4/12          std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data::_Vector_impl_data() [160]
+                                   4             void std::vector<unsigned char, std::allocator<unsigned char> >::_M_range_initialize_n<unsigned char const*, unsigned char const*>(unsigned char const*, unsigned char const*, unsigned long long) <cycle 1> [193]
+                                 304             read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]     0.4    0.01    0.00                 sin [11]
+-----------------------------------------------
+                0.00    0.00       4/6928439     write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      10/6928439     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.01    0.00 6928425/6928439     main [1]
+[12]     0.4    0.01    0.00 6928439         NiftiVolume::size() const [12]
+-----------------------------------------------
+                0.00    0.01       4/4           main [1]
+[13]     0.2    0.00    0.01       4         save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+                0.01    0.00 3280648/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00       4/4           std::vector<unsigned char, std::allocator<unsigned char> >::reserve(unsigned long long) [19]
+                0.00    0.00       4/4           std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_initialize(unsigned long long) [21]
+                0.00    0.00  712804/1425640     std::vector<unsigned char, std::allocator<unsigned char> >::end() [121]
+                0.00    0.00  712800/712800      unsigned char* std::__copy_move_a2<false, unsigned char*, unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*) [132]
+                0.00    0.00  712800/712800      std::isnan(double) [134]
+                0.00    0.00    2160/2288        std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&) [136]
+                0.00    0.00    2160/2160        std::array<unsigned char, 3ull>::end() [137]
+                0.00    0.00    2160/2160        std::array<unsigned char, 3ull>::begin() [138]
+                0.00    0.00      56/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00      20/30          std::vector<unsigned char, std::allocator<unsigned char> >::~vector() [147]
+                0.00    0.00       4/4           std::vector<unsigned char, std::allocator<unsigned char> >::_M_erase_at_end(unsigned char*) [192]
+                0.00    0.00       4/24          std::vector<unsigned char, std::allocator<unsigned char> >::resize(unsigned long long) [150]
+                0.00    0.00       4/12          std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data::_Vector_impl_data() [160]
+                0.00    0.00       4/4           _ZNSt12_Vector_baseIhSaIhEE12_Vector_implC1EvQ26is_default_constructible_vIN9__gnu_cxx14__alloc_traitsIT0_NS5_10value_typeEE6rebindIT_E5otherEE [188]
+                0.00    0.00       4/4           std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base() [189]
+                0.00    0.00       4/4           std::vector<unsigned char, std::allocator<unsigned char> >::vector() [194]
+-----------------------------------------------
+                0.00    0.00      28/2288        void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_append<unsigned char>(unsigned char&&) [18]
+                0.00    0.00    2260/2288        (anonymous namespace)::hot(double) [15]
+[14]     0.0    0.00    0.00    2288         _ZSt12construct_atIhJhEQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S0_pispcl7declvalIT0_EEEEEPS0_S3_DpOS2_ [14]
+                0.00    0.00    2288/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.0    0.00    0.00                 (anonymous namespace)::hot(double) [15]
+                0.00    0.00    2260/2288        _ZSt12construct_atIhJhEQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S0_pispcl7declvalIT0_EEEEEPS0_S3_DpOS2_ [14]
+                0.00    0.00       4/4           std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long long) [20]
+                0.00    0.00       4/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00 1281600/1281600     double const& std::min<double>(double const&, double const&) [125]
+                0.00    0.00 1281600/1281600     double const& std::clamp<double>(double const&, double const&, double const&) [126]
+                0.00    0.00       4/12          std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data::_Vector_impl_data() [160]
+-----------------------------------------------
+                0.00    0.00      36/712836      (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00  712800/712836      (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[16]     0.0    0.00    0.00  712836         unsigned char* std::__do_uninit_copy<std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [16]
+                0.00    0.00     780/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00  713096/713096      bool std::operator==<unsigned char*>(std::move_iterator<unsigned char*> const&, std::move_iterator<unsigned char*> const&) [128]
+                0.00    0.00     260/260         std::move_iterator<unsigned char*>::operator*() const [139]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     0.0    0.00    0.00                 (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00     292/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00      28/28          void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_append<unsigned char>(unsigned char&&) [18]
+                0.00    0.00      36/712836      unsigned char* std::__do_uninit_copy<std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [16]
+                0.00    0.00 1425624/1425624     std::move_iterator<unsigned char*> std::make_move_iterator<unsigned char*>(unsigned char*) [122]
+                0.00    0.00     128/2288        std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&) [136]
+                0.00    0.00      48/48          std::move_iterator<unsigned char*> std::__make_move_if_noexcept_iterator<unsigned char, std::move_iterator<unsigned char*> >(unsigned char*) [145]
+                0.00    0.00      36/712836      unsigned char* std::uninitialized_copy<std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [129]
+                0.00    0.00      28/712828      std::vector<unsigned char, std::allocator<unsigned char> >::cbegin() const [130]
+                0.00    0.00      28/712828      std::vector<unsigned char, std::allocator<unsigned char> >::begin() [131]
+                0.00    0.00      24/24          char const* std::__miter_base<char const*>(char const*) [151]
+                0.00    0.00      12/1425640     std::vector<unsigned char, std::allocator<unsigned char> >::end() [121]
+                0.00    0.00      12/12          unsigned char* std::uninitialized_copy<char const*, unsigned char*>(char const*, char const*, unsigned char*) [162]
+                0.00    0.00      12/50          std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const [144]
+                0.00    0.00       8/8           unsigned char* std::uninitialized_copy<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*) [180]
+                0.00    0.00       4/8           unsigned char* std::uninitialized_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*) [181]
+-----------------------------------------------
+                0.00    0.00      28/28          (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+[18]     0.0    0.00    0.00      28         void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_append<unsigned char>(unsigned char&&) [18]
+                0.00    0.00     216/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00      28/2288        _ZSt12construct_atIhJhEQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S0_pispcl7declvalIT0_EEEEEPS0_S3_DpOS2_ [14]
+                0.00    0.00      28/50          std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const [144]
+                0.00    0.00      28/38          std::vector<unsigned char, std::allocator<unsigned char> >::_Guard_alloc::_Guard_alloc(unsigned char*, unsigned long long, std::_Vector_base<unsigned char, std::allocator<unsigned char> >&) [146]
+-----------------------------------------------
+                0.00    0.00       4/4           save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[19]     0.0    0.00    0.00       4         std::vector<unsigned char, std::allocator<unsigned char> >::reserve(unsigned long long) [19]
+                0.00    0.00      28/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00       4/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00       4/104         std::vector<unsigned char, std::allocator<unsigned char> >::max_size() const [141]
+-----------------------------------------------
+                0.00    0.00       4/4           (anonymous namespace)::hot(double) [15]
+[20]     0.0    0.00    0.00       4         std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long long) [20]
+                0.00    0.00       8/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+-----------------------------------------------
+                0.00    0.00       4/4           save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[21]     0.0    0.00    0.00       4         std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_initialize(unsigned long long) [21]
+                0.00    0.00       4/6135618     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00       4/14          unsigned char* std::__uninitialized_default_n_1<true>::__uninit_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [155]
+                0.00    0.00       4/14          unsigned char* std::__uninitialized_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [157]
+-----------------------------------------------
+                0.00    0.00       4/414         main [1]
+                0.00    0.00      10/414         std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [29]
+                0.00    0.00      10/414         (anonymous namespace)::read_up_to(gzFile_s*, unsigned long long) [26]
+                0.00    0.00      10/414         std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [28]
+                0.00    0.00      20/414         std::unique_ptr<gzFile_s, (anonymous namespace)::GzClose>::operator bool() const [27]
+                0.00    0.00      40/414         std::unique_ptr<gzFile_s, (anonymous namespace)::GzClose>::~unique_ptr() [25]
+                0.00    0.00      60/414         std::__uniq_ptr_impl<gzFile_s, (anonymous namespace)::GzClose>::__uniq_ptr_impl(gzFile_s*) [24]
+                0.00    0.00     120/414         std::__uniq_ptr_impl<gzFile_s, (anonymous namespace)::GzClose>::_M_ptr() const [23]
+                0.00    0.00     140/414         read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+[22]     0.0    0.00    0.00     414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00       4/6928439     NiftiVolume::size() const [12]
+                0.00    0.00      56/15397222     parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     0.0    0.00    0.00                 std::__uniq_ptr_impl<gzFile_s, (anonymous namespace)::GzClose>::_M_ptr() const [23]
+                0.00    0.00     120/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      40/60          std::_Head_base<0ull, gzFile_s*, false>::_M_head(std::_Head_base<0ull, gzFile_s*, false>&) [142]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     0.0    0.00    0.00                 std::__uniq_ptr_impl<gzFile_s, (anonymous namespace)::GzClose>::__uniq_ptr_impl(gzFile_s*) [24]
+                0.00    0.00      60/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      10/10          std::_Head_base<0ull, gzFile_s*, false>::_Head_base() [168]
+                0.00    0.00      10/60          std::_Head_base<0ull, gzFile_s*, false>::_M_head(std::_Head_base<0ull, gzFile_s*, false>&) [142]
+-----------------------------------------------
+                                                 <spontaneous>
+[25]     0.0    0.00    0.00                 std::unique_ptr<gzFile_s, (anonymous namespace)::GzClose>::~unique_ptr() [25]
+                0.00    0.00      40/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      10/60          std::_Head_base<0ull, gzFile_s*, false>::_M_head(std::_Head_base<0ull, gzFile_s*, false>&) [142]
+                0.00    0.00      10/15397222     parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                                                 <spontaneous>
+[26]     0.0    0.00    0.00                 (anonymous namespace)::read_up_to(gzFile_s*, unsigned long long) [26]
+                0.00    0.00      10/10          std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [28]
+                0.00    0.00      10/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      40/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00      20/24          std::vector<unsigned char, std::allocator<unsigned char> >::resize(unsigned long long) [150]
+                0.00    0.00      10/177         unsigned long long const& std::min<unsigned long long>(unsigned long long const&, unsigned long long const&) [140]
+-----------------------------------------------
+                                                 <spontaneous>
+[27]     0.0    0.00    0.00                 std::unique_ptr<gzFile_s, (anonymous namespace)::GzClose>::operator bool() const [27]
+                0.00    0.00      20/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+-----------------------------------------------
+                0.00    0.00      10/10          (anonymous namespace)::read_up_to(gzFile_s*, unsigned long long) [26]
+[28]     0.0    0.00    0.00      10         std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [28]
+                0.00    0.00      10/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      60/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00      10/50          std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const [144]
+                0.00    0.00      10/38          std::vector<unsigned char, std::allocator<unsigned char> >::_Guard_alloc::_Guard_alloc(unsigned char*, unsigned long long, std::_Vector_base<unsigned char, std::allocator<unsigned char> >&) [146]
+                0.00    0.00      10/14          unsigned char* std::__uninitialized_default_n_1<true>::__uninit_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [155]
+                0.00    0.00      10/14          unsigned char* std::__uninitialized_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [157]
+-----------------------------------------------
+                0.00    0.00      10/10          read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+[29]     0.0    0.00    0.00      10         std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [29]
+                0.00    0.00      10/414         write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      60/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00      10/10          std::vector<double, std::allocator<double> >::_M_check_len(unsigned long long, char const*) const [167]
+                0.00    0.00      10/10          std::vector<double, std::allocator<double> >::_Guard_alloc::_Guard_alloc(double*, unsigned long long, std::_Vector_base<double, std::allocator<double> >&) [169]
+                0.00    0.00      10/11          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long long>(double*, unsigned long long) [163]
+                0.00    0.00      10/11          double* std::__uninitialized_default_n<double*, unsigned long long>(double*, unsigned long long) [165]
+-----------------------------------------------
+                0.00    0.00       1/31422177     std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow() [244]
+                0.00    0.00       2/31422177     auto std::filesystem::__cxx11::path::_S_convert<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [220]
+                0.00    0.00       2/31422177     _ZSt12construct_atISt17basic_string_viewIcSt11char_traitsIcEEJRS3_EQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S5_pispcl7declvalIT0_EEEEEPS5_S8_DpOS7_ [211]
+                0.00    0.00       4/31422177     auto std::__format::__pack_arg_types<5, 2ull>(std::array<std::__format::_Arg_t, 2ull> const&) [243]
+                0.00    0.00       6/31422177     _ZSteqIPKNSt8__format6_Arg_tEEbRKSt16reverse_iteratorIT_ES8_QrqXeqcldtfL0p_4baseEcldtfL0p0_4baseERSt14convertible_toIbEE [203]
+                0.00    0.00       7/31422177     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00       8/31422177     void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::__resize_and_overwrite<std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}>(unsigned long long, std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}) [176]
+                0.00    0.00       9/31422177     std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [174]
+                0.00    0.00      10/31422177     std::_Vector_base<double, std::allocator<double> >::_M_create_storage(unsigned long long) [184]
+                0.00    0.00      10/31422177     std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [173]
+                0.00    0.00      11/31422177     double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long long>(double*, unsigned long long) [163]
+                0.00    0.00      11/31422177     void std::_Construct<double>(double*) [164]
+                0.00    0.00 3079296/31422177     double* std::__do_uninit_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&) [196]
+                0.00    0.00 3079361/31422177     __tcf_ZL6FOLDER [471]
+                0.00    0.00 25263439/31422177     main [1]
+[115]    0.0    0.00    0.00 31422177         __gcc_deregister_frame [115]
+-----------------------------------------------
+                                  10             parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00       1/15397222     std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::get() && [217]
+                0.00    0.00       1/15397222     std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long long) [240]
+                0.00    0.00       1/15397222     std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow() [244]
+                0.00    0.00       1/15397222     std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >) [257]
+                0.00    0.00       4/15397222     std::vector<double, std::allocator<double> >::_M_fill_initialize(unsigned long long, double const&) [191]
+                0.00    0.00       4/15397222     std::vector<unsigned char, std::allocator<unsigned char> >::reserve(unsigned long long) [19]
+                0.00    0.00       6/15397222     main [1]
+                0.00    0.00      10/15397222     std::unique_ptr<gzFile_s, (anonymous namespace)::GzClose>::~unique_ptr() [25]
+                0.00    0.00      10/15397222     std::vector<double, std::allocator<double> >::resize(unsigned long long) [170]
+                0.00    0.00      14/15397222     unsigned char* std::__uninitialized_default_n_1<true>::__uninit_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [155]
+                0.00    0.00      14/15397222     void std::_Construct<unsigned char>(unsigned char*) [156]
+                0.00    0.00      24/15397222     std::vector<unsigned char, std::allocator<unsigned char> >::resize(unsigned long long) [150]
+                0.00    0.00      30/15397222     std::vector<double, std::allocator<double> >::_M_check_len(unsigned long long, char const*) const [167]
+                0.00    0.00      40/15397222     (anonymous namespace)::read_up_to(gzFile_s*, unsigned long long) [26]
+                0.00    0.00      56/15397222     write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [22]
+                0.00    0.00      56/15397222     save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+                0.00    0.00      60/15397222     std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [29]
+                0.00    0.00      60/15397222     std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [28]
+                0.00    0.00     150/15397222     std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const [144]
+                0.00    0.00 15396680/15397222     read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+[116]    0.0    0.00    0.00 15397222+10      parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00       7/31422177     __gcc_deregister_frame [115]
+                0.00    0.00       5/5           std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_Vector_impl_data() [185]
+                0.00    0.00       5/5           std::_Vector_base<double, std::allocator<double> >::_M_create_storage(unsigned long long) [184]
+                0.00    0.00       2/2           std::span<char, 18446744073709551615ull>::span<char*>(char*, unsigned long long) [207]
+                0.00    0.00       1/1           std::__format::_Optional_locale::~_Optional_locale() [242]
+                0.00    0.00       1/1           std::basic_format_context<std::__format::_Sink_iter<char>, char>::~basic_format_context() [237]
+                0.00    0.00       1/1           std::basic_format_context<std::__format::_Sink_iter<char>, char>::basic_format_context(std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >, std::__format::_Sink_iter<char>) [236]
+                0.00    0.00       1/1           std::basic_string_view<char, std::char_traits<char> > std::filesystem::__cxx11::__detail::__effective_range<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [226]
+                0.00    0.00       1/1           auto std::filesystem::__cxx11::path::_S_convert<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [220]
+                                  10             parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                0.00    0.00 6843583/6843583     FitResult fit_voxel_sub_ml<9>(double const*, double const*, double, double, double, double, double, double) [2]
+[117]    0.0    0.00    0.00 6843583         fit_device::clamp(double, double, double) [117]
+-----------------------------------------------
+                0.00    0.00 1626498/1626498     main [1]
+[118]    0.0    0.00    0.00 1626498         std::array<double, 9ull>::operator[](unsigned long long) [118]
+-----------------------------------------------
+                0.00    0.00 1426192/1426192     bool std::operator==<unsigned char*>(std::move_iterator<unsigned char*> const&, std::move_iterator<unsigned char*> const&) [128]
+[119]    0.0    0.00    0.00 1426192         std::move_iterator<unsigned char*>::base() const & [119]
+-----------------------------------------------
+                0.00    0.00      48/1425672     std::move_iterator<unsigned char*> std::__make_move_if_noexcept_iterator<unsigned char, std::move_iterator<unsigned char*> >(unsigned char*) [145]
+                0.00    0.00 1425624/1425672     std::move_iterator<unsigned char*> std::make_move_iterator<unsigned char*>(unsigned char*) [122]
+[120]    0.0    0.00    0.00 1425672         std::move_iterator<unsigned char*>::move_iterator(unsigned char*) [120]
+-----------------------------------------------
+                0.00    0.00      12/1425640     (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00  712804/1425640     save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+                0.00    0.00  712824/1425640     (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[121]    0.0    0.00    0.00 1425640         std::vector<unsigned char, std::allocator<unsigned char> >::end() [121]
+-----------------------------------------------
+                0.00    0.00 1425624/1425624     (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+[122]    0.0    0.00    0.00 1425624         std::move_iterator<unsigned char*> std::make_move_iterator<unsigned char*>(unsigned char*) [122]
+                0.00    0.00 1425624/1425672     std::move_iterator<unsigned char*>::move_iterator(unsigned char*) [120]
+-----------------------------------------------
+                0.00    0.00 1425600/1425600     (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[123]    0.0    0.00    0.00 1425600         unsigned char* std::__miter_base<unsigned char*>(unsigned char*) [123]
+-----------------------------------------------
+                0.00    0.00 1281600/1281600     double const& std::clamp<double>(double const&, double const&, double const&) [126]
+[124]    0.0    0.00    0.00 1281600         double const& std::max<double>(double const&, double const&) [124]
+-----------------------------------------------
+                0.00    0.00 1281600/1281600     (anonymous namespace)::hot(double) [15]
+[125]    0.0    0.00    0.00 1281600         double const& std::min<double>(double const&, double const&) [125]
+-----------------------------------------------
+                0.00    0.00 1281600/1281600     (anonymous namespace)::hot(double) [15]
+[126]    0.0    0.00    0.00 1281600         double const& std::clamp<double>(double const&, double const&, double const&) [126]
+                0.00    0.00 1281600/1281600     double const& std::max<double>(double const&, double const&) [124]
+-----------------------------------------------
+                0.00    0.00  769824/769824      main [1]
+[127]    0.0    0.00    0.00  769824         __gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int) [127]
+-----------------------------------------------
+                0.00    0.00  713096/713096      unsigned char* std::__do_uninit_copy<std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [16]
+[128]    0.0    0.00    0.00  713096         bool std::operator==<unsigned char*>(std::move_iterator<unsigned char*> const&, std::move_iterator<unsigned char*> const&) [128]
+                0.00    0.00 1426192/1426192     std::move_iterator<unsigned char*>::base() const & [119]
+-----------------------------------------------
+                0.00    0.00      36/712836      (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00  712800/712836      (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[129]    0.0    0.00    0.00  712836         unsigned char* std::uninitialized_copy<std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [129]
+-----------------------------------------------
+                0.00    0.00      28/712828      (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00  712800/712828      (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[130]    0.0    0.00    0.00  712828         std::vector<unsigned char, std::allocator<unsigned char> >::cbegin() const [130]
+-----------------------------------------------
+                0.00    0.00      28/712828      (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00  712800/712828      (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[131]    0.0    0.00    0.00  712828         std::vector<unsigned char, std::allocator<unsigned char> >::begin() [131]
+-----------------------------------------------
+                0.00    0.00  712800/712800      save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[132]    0.0    0.00    0.00  712800         unsigned char* std::__copy_move_a2<false, unsigned char*, unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*) [132]
+-----------------------------------------------
+                0.00    0.00  712800/712800      (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[133]    0.0    0.00    0.00  712800         unsigned char* std::uninitialized_copy<unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*) [133]
+-----------------------------------------------
+                0.00    0.00  712800/712800      save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[134]    0.0    0.00    0.00  712800         std::isnan(double) [134]
+-----------------------------------------------
+                0.00    0.00  180722/180722      main [1]
+[135]    0.0    0.00    0.00  180722         std::array<double, 9ull>::data() const [135]
+-----------------------------------------------
+                0.00    0.00     128/2288        (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00    2160/2288        save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[136]    0.0    0.00    0.00    2288         std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&) [136]
+-----------------------------------------------
+                0.00    0.00    2160/2160        save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[137]    0.0    0.00    0.00    2160         std::array<unsigned char, 3ull>::end() [137]
+-----------------------------------------------
+                0.00    0.00    2160/2160        save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[138]    0.0    0.00    0.00    2160         std::array<unsigned char, 3ull>::begin() [138]
+-----------------------------------------------
+                0.00    0.00     260/260         unsigned char* std::__do_uninit_copy<std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*) [16]
+[139]    0.0    0.00    0.00     260         std::move_iterator<unsigned char*>::operator*() const [139]
+-----------------------------------------------
+                0.00    0.00       5/177         __tcf_ZL6FOLDER [471]
+                0.00    0.00       8/177         read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00      10/177         (anonymous namespace)::read_up_to(gzFile_s*, unsigned long long) [26]
+                0.00    0.00      30/177         (anonymous namespace)::read_bytes(gzFile_s*, unsigned char*, unsigned long long) [265]
+                0.00    0.00     124/177         std::unique_ptr<gzFile_s, (anonymous namespace)::GzClose>::get_deleter() [311]
+[140]    0.0    0.00    0.00     177         unsigned long long const& std::min<unsigned long long>(unsigned long long const&, unsigned long long const&) [140]
+-----------------------------------------------
+                0.00    0.00       4/104         std::vector<unsigned char, std::allocator<unsigned char> >::reserve(unsigned long long) [19]
+                0.00    0.00     100/104         std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const [144]
+[141]    0.0    0.00    0.00     104         std::vector<unsigned char, std::allocator<unsigned char> >::max_size() const [141]
+-----------------------------------------------
+                0.00    0.00      10/60          std::__uniq_ptr_impl<gzFile_s, (anonymous namespace)::GzClose>::__uniq_ptr_impl(gzFile_s*) [24]
+                0.00    0.00      10/60          std::unique_ptr<gzFile_s, (anonymous namespace)::GzClose>::~unique_ptr() [25]
+                0.00    0.00      40/60          std::__uniq_ptr_impl<gzFile_s, (anonymous namespace)::GzClose>::_M_ptr() const [23]
+[142]    0.0    0.00    0.00      60         std::_Head_base<0ull, gzFile_s*, false>::_M_head(std::_Head_base<0ull, gzFile_s*, false>&) [142]
+-----------------------------------------------
+                0.00    0.00      10/60          std::vector<double, std::allocator<double> >::_M_check_len(unsigned long long, char const*) const [167]
+                0.00    0.00      50/60          std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const [144]
+[143]    0.0    0.00    0.00      60         unsigned long long const& std::max<unsigned long long>(unsigned long long const&, unsigned long long const&) [143]
+-----------------------------------------------
+                0.00    0.00      10/50          std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [28]
+                0.00    0.00      12/50          (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00      28/50          void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_append<unsigned char>(unsigned char&&) [18]
+[144]    0.0    0.00    0.00      50         std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const [144]
+                0.00    0.00     150/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00     100/104         std::vector<unsigned char, std::allocator<unsigned char> >::max_size() const [141]
+                0.00    0.00      50/60          unsigned long long const& std::max<unsigned long long>(unsigned long long const&, unsigned long long const&) [143]
+-----------------------------------------------
+                0.00    0.00      48/48          (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+[145]    0.0    0.00    0.00      48         std::move_iterator<unsigned char*> std::__make_move_if_noexcept_iterator<unsigned char, std::move_iterator<unsigned char*> >(unsigned char*) [145]
+                0.00    0.00      48/1425672     std::move_iterator<unsigned char*>::move_iterator(unsigned char*) [120]
+-----------------------------------------------
+                0.00    0.00      10/38          std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [28]
+                0.00    0.00      28/38          void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_append<unsigned char>(unsigned char&&) [18]
+[146]    0.0    0.00    0.00      38         std::vector<unsigned char, std::allocator<unsigned char> >::_Guard_alloc::_Guard_alloc(unsigned char*, unsigned long long, std::_Vector_base<unsigned char, std::allocator<unsigned char> >&) [146]
+-----------------------------------------------
+                0.00    0.00      10/30          read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00      20/30          save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[147]    0.0    0.00    0.00      30         std::vector<unsigned char, std::allocator<unsigned char> >::~vector() [147]
+-----------------------------------------------
+                0.00    0.00      28/28          main [1]
+[148]    0.0    0.00    0.00      28         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, char const*) [148]
+-----------------------------------------------
+                0.00    0.00      11/25          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long long>(double*, unsigned long long) [163]
+                0.00    0.00      14/25          unsigned char* std::__uninitialized_default_n_1<true>::__uninit_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [155]
+[149]    0.0    0.00    0.00      25         std::__size_to_integer(unsigned long long) [149]
+-----------------------------------------------
+                0.00    0.00       4/24          save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+                0.00    0.00      20/24          (anonymous namespace)::read_up_to(gzFile_s*, unsigned long long) [26]
+[150]    0.0    0.00    0.00      24         std::vector<unsigned char, std::allocator<unsigned char> >::resize(unsigned long long) [150]
+                0.00    0.00      24/15397222     parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                0.00    0.00      24/24          (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+[151]    0.0    0.00    0.00      24         char const* std::__miter_base<char const*>(char const*) [151]
+-----------------------------------------------
+                0.00    0.00      20/20          std::vector<double, std::allocator<double> >::_M_check_len(unsigned long long, char const*) const [167]
+[152]    0.0    0.00    0.00      20         std::vector<double, std::allocator<double> >::max_size() const [152]
+-----------------------------------------------
+                0.00    0.00       4/17          __tcf_ZL6FOLDER [471]
+                0.00    0.00       4/17          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [198]
+                0.00    0.00       9/17          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [174]
+[153]    0.0    0.00    0.00      17         std::char_traits<char>::length(char const*) [153]
+-----------------------------------------------
+                0.00    0.00      15/15          main [1]
+[154]    0.0    0.00    0.00      15         std::vector<double, std::allocator<double> >::~vector() [154]
+-----------------------------------------------
+                0.00    0.00       4/14          std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_initialize(unsigned long long) [21]
+                0.00    0.00      10/14          std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [28]
+[155]    0.0    0.00    0.00      14         unsigned char* std::__uninitialized_default_n_1<true>::__uninit_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [155]
+                0.00    0.00      14/14          void std::_Construct<unsigned char>(unsigned char*) [156]
+                0.00    0.00      14/25          std::__size_to_integer(unsigned long long) [149]
+                0.00    0.00      14/15397222     parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                0.00    0.00      14/14          unsigned char* std::__uninitialized_default_n_1<true>::__uninit_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [155]
+[156]    0.0    0.00    0.00      14         void std::_Construct<unsigned char>(unsigned char*) [156]
+                0.00    0.00      14/15397222     parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                0.00    0.00       4/14          std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_initialize(unsigned long long) [21]
+                0.00    0.00      10/14          std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [28]
+[157]    0.0    0.00    0.00      14         unsigned char* std::__uninitialized_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [157]
+-----------------------------------------------
+                0.00    0.00      12/12          (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[158]    0.0    0.00    0.00      12         std::vector<unsigned char, std::allocator<unsigned char> >::end() const [158]
+-----------------------------------------------
+                0.00    0.00      12/12          (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[159]    0.0    0.00    0.00      12         std::vector<unsigned char, std::allocator<unsigned char> >::begin() const [159]
+-----------------------------------------------
+                0.00    0.00       4/12          read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+                0.00    0.00       4/12          (anonymous namespace)::hot(double) [15]
+                0.00    0.00       4/12          save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[160]    0.0    0.00    0.00      12         std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data::_Vector_impl_data() [160]
+-----------------------------------------------
+                0.00    0.00      12/12          (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [8]
+[161]    0.0    0.00    0.00      12         unsigned char* std::__copy_move_a2<false, char const*, char const*, unsigned char*>(char const*, char const*, unsigned char*) [161]
+-----------------------------------------------
+                0.00    0.00      12/12          (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+[162]    0.0    0.00    0.00      12         unsigned char* std::uninitialized_copy<char const*, unsigned char*>(char const*, char const*, unsigned char*) [162]
+-----------------------------------------------
+                0.00    0.00       1/11          std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long long) [240]
+                0.00    0.00      10/11          std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [29]
+[163]    0.0    0.00    0.00      11         double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long long>(double*, unsigned long long) [163]
+                0.00    0.00      11/11          void std::_Construct<double>(double*) [164]
+                0.00    0.00      11/25          std::__size_to_integer(unsigned long long) [149]
+                0.00    0.00      11/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00      11/11          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long long>(double*, unsigned long long) [163]
+[164]    0.0    0.00    0.00      11         void std::_Construct<double>(double*) [164]
+                0.00    0.00      11/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       1/11          std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long long) [240]
+                0.00    0.00      10/11          std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [29]
+[165]    0.0    0.00    0.00      11         double* std::__uninitialized_default_n<double*, unsigned long long>(double*, unsigned long long) [165]
+-----------------------------------------------
+                0.00    0.00      10/10          main [1]
+[166]    0.0    0.00    0.00      10         NiftiVolume::~NiftiVolume() [166]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [29]
+[167]    0.0    0.00    0.00      10         std::vector<double, std::allocator<double> >::_M_check_len(unsigned long long, char const*) const [167]
+                0.00    0.00      30/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00      20/20          std::vector<double, std::allocator<double> >::max_size() const [152]
+                0.00    0.00      10/60          unsigned long long const& std::max<unsigned long long>(unsigned long long const&, unsigned long long const&) [143]
+-----------------------------------------------
+                0.00    0.00      10/10          std::__uniq_ptr_impl<gzFile_s, (anonymous namespace)::GzClose>::__uniq_ptr_impl(gzFile_s*) [24]
+[168]    0.0    0.00    0.00      10         std::_Head_base<0ull, gzFile_s*, false>::_Head_base() [168]
+-----------------------------------------------
+                0.00    0.00      10/10          std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [29]
+[169]    0.0    0.00    0.00      10         std::vector<double, std::allocator<double> >::_Guard_alloc::_Guard_alloc(double*, unsigned long long, std::_Vector_base<double, std::allocator<double> >&) [169]
+-----------------------------------------------
+                0.00    0.00      10/10          read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+[170]    0.0    0.00    0.00      10         std::vector<double, std::allocator<double> >::resize(unsigned long long) [170]
+                0.00    0.00      10/15397222     parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                0.00    0.00      10/10          read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+[171]    0.0    0.00    0.00      10         std::isfinite(float) [171]
+-----------------------------------------------
+                0.00    0.00      10/10          main [1]
+[172]    0.0    0.00    0.00      10         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [172]
+-----------------------------------------------
+                0.00    0.00      10/10          main [1]
+[173]    0.0    0.00    0.00      10         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [173]
+                0.00    0.00      10/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       9/9           main [1]
+[174]    0.0    0.00    0.00       9         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [174]
+                0.00    0.00       9/17          std::char_traits<char>::length(char const*) [153]
+                0.00    0.00       9/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       8/8           main [1]
+[175]    0.0    0.00    0.00       8         std::array<double, 9ull>::operator[](unsigned long long) const [175]
+-----------------------------------------------
+                0.00    0.00       8/8           std::__cxx11::to_string(int) [177]
+[176]    0.0    0.00    0.00       8         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::__resize_and_overwrite<std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}>(unsigned long long, std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}) [176]
+                0.00    0.00       8/8           std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}::operator()(char*, unsigned long long) const [183]
+                0.00    0.00       8/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       8/8           main [1]
+[177]    0.0    0.00    0.00       8         std::__cxx11::to_string(int) [177]
+                0.00    0.00       8/8           unsigned int std::__detail::__to_chars_len<unsigned int>(unsigned int, int) [178]
+                0.00    0.00       8/8           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::__resize_and_overwrite<std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}>(unsigned long long, std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}) [176]
+-----------------------------------------------
+                0.00    0.00       8/8           std::__cxx11::to_string(int) [177]
+[178]    0.0    0.00    0.00       8         unsigned int std::__detail::__to_chars_len<unsigned int>(unsigned int, int) [178]
+-----------------------------------------------
+                0.00    0.00       8/8           std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}::operator()(char*, unsigned long long) const [183]
+[179]    0.0    0.00    0.00       8         void std::__detail::__to_chars_10_impl<unsigned int>(char*, unsigned int, unsigned int) [179]
+-----------------------------------------------
+                0.00    0.00       8/8           (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+[180]    0.0    0.00    0.00       8         unsigned char* std::uninitialized_copy<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*) [180]
+-----------------------------------------------
+                0.00    0.00       4/8           (anonymous namespace)::put_u32_be(std::vector<unsigned char, std::allocator<unsigned char> >&, unsigned int) [17]
+                0.00    0.00       4/8           void std::vector<unsigned char, std::allocator<unsigned char> >::_M_range_initialize_n<unsigned char const*, unsigned char const*>(unsigned char const*, unsigned char const*, unsigned long long) <cycle 1> [193]
+[181]    0.0    0.00    0.00       8         unsigned char* std::uninitialized_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*) [181]
+-----------------------------------------------
+                0.00    0.00       8/8           main [1]
+[182]    0.0    0.00    0.00       8         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [182]
+-----------------------------------------------
+                0.00    0.00       8/8           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::__resize_and_overwrite<std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}>(unsigned long long, std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}) [176]
+[183]    0.0    0.00    0.00       8         std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}::operator()(char*, unsigned long long) const [183]
+                0.00    0.00       8/8           void std::__detail::__to_chars_10_impl<unsigned int>(char*, unsigned int, unsigned int) [179]
+-----------------------------------------------
+                0.00    0.00       5/5           parse_count(char const*, unsigned long long&) [116]
+[184]    0.0    0.00    0.00       5         std::_Vector_base<double, std::allocator<double> >::_M_create_storage(unsigned long long) [184]
+                0.00    0.00      10/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       5/5           parse_count(char const*, unsigned long long&) [116]
+[185]    0.0    0.00    0.00       5         std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_Vector_impl_data() [185]
+-----------------------------------------------
+                0.00    0.00       1/4           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::get() && [217]
+                0.00    0.00       1/4           std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >) [257]
+                0.00    0.00       2/4           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow() [244]
+[186]    0.0    0.00    0.00       4         std::span<char, 18446744073709551615ull>::begin() const [186]
+-----------------------------------------------
+                0.00    0.00       1/4           std::array<std::__format::_Arg_t, 2ull>::end() const [215]
+                0.00    0.00       3/4           std::array<std::__format::_Arg_t, 2ull>::rend() const [200]
+[187]    0.0    0.00    0.00       4         std::array<std::__format::_Arg_t, 2ull>::data() const [187]
+-----------------------------------------------
+                0.00    0.00       4/4           save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[188]    0.0    0.00    0.00       4         _ZNSt12_Vector_baseIhSaIhEE12_Vector_implC1EvQ26is_default_constructible_vIN9__gnu_cxx14__alloc_traitsIT0_NS5_10value_typeEE6rebindIT_E5otherEE [188]
+-----------------------------------------------
+                0.00    0.00       4/4           save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[189]    0.0    0.00    0.00       4         std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base() [189]
+-----------------------------------------------
+                0.00    0.00       1/4           std::array<std::__format::_Arg_t, 2ull>::rbegin() const [216]
+                0.00    0.00       3/4           std::array<std::__format::_Arg_t, 2ull>::rend() const [200]
+[190]    0.0    0.00    0.00       4         std::reverse_iterator<std::__format::_Arg_t const*>::reverse_iterator(std::__format::_Arg_t const*) [190]
+-----------------------------------------------
+                0.00    0.00       4/4           main [1]
+[191]    0.0    0.00    0.00       4         std::vector<double, std::allocator<double> >::_M_fill_initialize(unsigned long long, double const&) [191]
+                0.00    0.00       4/4           double* std::__do_uninit_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&) [196]
+                0.00    0.00       4/4           double* std::uninitialized_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&) [197]
+                0.00    0.00       4/15397222     parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                0.00    0.00       4/4           save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[192]    0.0    0.00    0.00       4         std::vector<unsigned char, std::allocator<unsigned char> >::_M_erase_at_end(unsigned char*) [192]
+-----------------------------------------------
+                                   4             read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+[193]    0.0    0.00    0.00       4         void std::vector<unsigned char, std::allocator<unsigned char> >::_M_range_initialize_n<unsigned char const*, unsigned char const*>(unsigned char const*, unsigned char const*, unsigned long long) <cycle 1> [193]
+                0.00    0.00       4/8           unsigned char* std::uninitialized_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*) [181]
+                                  16             read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) <cycle 1> [10]
+-----------------------------------------------
+                0.00    0.00       4/4           save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [13]
+[194]    0.0    0.00    0.00       4         std::vector<unsigned char, std::allocator<unsigned char> >::vector() [194]
+-----------------------------------------------
+                0.00    0.00       4/4           __tcf_ZL6FOLDER [471]
+[195]    0.0    0.00    0.00       4         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [195]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<double, std::allocator<double> >::_M_fill_initialize(unsigned long long, double const&) [191]
+[196]    0.0    0.00    0.00       4         double* std::__do_uninit_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&) [196]
+                0.00    0.00 3079296/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<double, std::allocator<double> >::_M_fill_initialize(unsigned long long, double const&) [191]
+[197]    0.0    0.00    0.00       4         double* std::uninitialized_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&) [197]
+-----------------------------------------------
+                0.00    0.00       4/4           main [1]
+[198]    0.0    0.00    0.00       4         bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [198]
+                0.00    0.00       4/17          std::char_traits<char>::length(char const*) [153]
+                0.00    0.00       3/3           std::char_traits<char>::compare(char const*, char const*, unsigned long long) [202]
+-----------------------------------------------
+                0.00    0.00       1/3           std::span<char, 18446744073709551615ull>::empty() const [214]
+                0.00    0.00       1/3           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::get() && [217]
+                0.00    0.00       1/3           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow() [244]
+[199]    0.0    0.00    0.00       3         std::span<char, 18446744073709551615ull>::size() const [199]
+-----------------------------------------------
+                0.00    0.00       3/3           auto std::__format::__pack_arg_types<5, 2ull>(std::array<std::__format::_Arg_t, 2ull> const&) [243]
+[200]    0.0    0.00    0.00       3         std::array<std::__format::_Arg_t, 2ull>::rend() const [200]
+                0.00    0.00       3/4           std::array<std::__format::_Arg_t, 2ull>::data() const [187]
+                0.00    0.00       3/3           std::array<std::__format::_Arg_t, 2ull>::begin() const [201]
+                0.00    0.00       3/4           std::reverse_iterator<std::__format::_Arg_t const*>::reverse_iterator(std::__format::_Arg_t const*) [190]
+-----------------------------------------------
+                0.00    0.00       3/3           std::array<std::__format::_Arg_t, 2ull>::rend() const [200]
+[201]    0.0    0.00    0.00       3         std::array<std::__format::_Arg_t, 2ull>::begin() const [201]
+-----------------------------------------------
+                0.00    0.00       3/3           bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [198]
+[202]    0.0    0.00    0.00       3         std::char_traits<char>::compare(char const*, char const*, unsigned long long) [202]
+-----------------------------------------------
+                0.00    0.00       3/3           auto std::__format::__pack_arg_types<5, 2ull>(std::array<std::__format::_Arg_t, 2ull> const&) [243]
+[203]    0.0    0.00    0.00       3         _ZSteqIPKNSt8__format6_Arg_tEEbRKSt16reverse_iteratorIT_ES8_QrqXeqcldtfL0p_4baseEcldtfL0p0_4baseERSt14convertible_toIbEE [203]
+                0.00    0.00       6/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       2/2           std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_arg<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [205]
+[204]    0.0    0.00    0.00       2         void std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::_M_set<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [204]
+                0.00    0.00       2/2           _ZSt12construct_atISt17basic_string_viewIcSt11char_traitsIcEEJRS3_EQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S5_pispcl7declvalIT0_EEEEEPS5_S8_DpOS7_ [211]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__format::_Arg_value<std::basic_format_context<std::__format::_Sink_iter<char>, char> > std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >::_S_make_elt<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [209]
+[205]    0.0    0.00    0.00       2         std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_arg<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [205]
+                0.00    0.00       2/2           std::basic_string_view<char, std::char_traits<char> >::basic_string_view(char const*, unsigned long long) [206]
+                0.00    0.00       2/2           void std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::_M_set<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [204]
+-----------------------------------------------
+                0.00    0.00       2/2           std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_arg<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [205]
+[206]    0.0    0.00    0.00       2         std::basic_string_view<char, std::char_traits<char> >::basic_string_view(char const*, unsigned long long) [206]
+-----------------------------------------------
+                0.00    0.00       2/2           parse_count(char const*, unsigned long long&) [116]
+[207]    0.0    0.00    0.00       2         std::span<char, 18446744073709551615ull>::span<char*>(char*, unsigned long long) [207]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[208]    0.0    0.00    0.00       2         std::vector<double, std::allocator<double> >::begin() [208]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::format<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::basic_format_string<char, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::type>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [256]
+[209]    0.0    0.00    0.00       2         std::__format::_Arg_value<std::basic_format_context<std::__format::_Sink_iter<char>, char> > std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >::_S_make_elt<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [209]
+                0.00    0.00       2/2           std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_arg<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [205]
+-----------------------------------------------
+                0.00    0.00       2/2           __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::copy<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >) [255]
+[210]    0.0    0.00    0.00       2         __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::__miter_base<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >) [210]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::_M_set<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [204]
+[211]    0.0    0.00    0.00       2         _ZSt12construct_atISt17basic_string_viewIcSt11char_traitsIcEEJRS3_EQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S5_pispcl7declvalIT0_EEEEEPS5_S8_DpOS7_ [211]
+                0.00    0.00       2/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       1/1           bool std::__do_str_codecvt<std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >, char, std::codecvt<wchar_t, char, _Mbstatet>, _Mbstatet, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const) [249]
+[212]    0.0    0.00    0.00       1         std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::max_length() const [212]
+-----------------------------------------------
+                0.00    0.00       1/1           bool std::__do_str_codecvt<std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >, char, std::codecvt<wchar_t, char, _Mbstatet>, _Mbstatet, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const) [249]
+[213]    0.0    0.00    0.00       1         std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::in(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const [213]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow() [244]
+[214]    0.0    0.00    0.00       1         std::span<char, 18446744073709551615ull>::empty() const [214]
+                0.00    0.00       1/3           std::span<char, 18446744073709551615ull>::size() const [199]
+-----------------------------------------------
+                0.00    0.00       1/1           std::array<std::__format::_Arg_t, 2ull>::rbegin() const [216]
+[215]    0.0    0.00    0.00       1         std::array<std::__format::_Arg_t, 2ull>::end() const [215]
+                0.00    0.00       1/4           std::array<std::__format::_Arg_t, 2ull>::data() const [187]
+-----------------------------------------------
+                0.00    0.00       1/1           auto std::__format::__pack_arg_types<5, 2ull>(std::array<std::__format::_Arg_t, 2ull> const&) [243]
+[216]    0.0    0.00    0.00       1         std::array<std::__format::_Arg_t, 2ull>::rbegin() const [216]
+                0.00    0.00       1/1           std::array<std::__format::_Arg_t, 2ull>::end() const [215]
+                0.00    0.00       1/4           std::reverse_iterator<std::__format::_Arg_t const*>::reverse_iterator(std::__format::_Arg_t const*) [190]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >) [257]
+[217]    0.0    0.00    0.00       1         std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::get() && [217]
+                0.00    0.00       1/4           std::span<char, 18446744073709551615ull>::begin() const [186]
+                0.00    0.00       1/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00       1/3           std::span<char, 18446744073709551615ull>::size() const [199]
+                0.00    0.00       1/1           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow() [244]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[218]    0.0    0.00    0.00       1         std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>::_M_head(std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>&) [218]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[219]    0.0    0.00    0.00       1         std::_Head_base<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter, true>::_M_head(std::_Head_base<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter, true>&) [219]
+-----------------------------------------------
+                0.00    0.00       1/1           parse_count(char const*, unsigned long long&) [116]
+[220]    0.0    0.00    0.00       1         auto std::filesystem::__cxx11::path::_S_convert<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [220]
+                0.00    0.00       2/31422177     __gcc_deregister_frame [115]
+                0.00    0.00       1/1           auto std::filesystem::__cxx11::path::_S_convert<char>(char const*, char const*) [221]
+-----------------------------------------------
+                0.00    0.00       1/1           auto std::filesystem::__cxx11::path::_S_convert<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [220]
+[221]    0.0    0.00    0.00       1         auto std::filesystem::__cxx11::path::_S_convert<char>(char const*, char const*) [221]
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::_Codecvt<wchar_t>::_Codecvt() [223]
+                0.00    0.00       1/1           bool std::__str_codecvt_in_all<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&) [251]
+                0.00    0.00       1/1           std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::~codecvt_utf8_utf16() [235]
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::_Codecvt<wchar_t>::~_Codecvt() [224]
+-----------------------------------------------
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::~path() [225]
+[222]    0.0    0.00    0.00       1         std::filesystem::__cxx11::path::_List::~_List() [222]
+-----------------------------------------------
+                0.00    0.00       1/1           auto std::filesystem::__cxx11::path::_S_convert<char>(char const*, char const*) [221]
+[223]    0.0    0.00    0.00       1         std::filesystem::__cxx11::path::_Codecvt<wchar_t>::_Codecvt() [223]
+                0.00    0.00       1/1           std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::codecvt_utf8_utf16(unsigned long long) [234]
+-----------------------------------------------
+                0.00    0.00       1/1           auto std::filesystem::__cxx11::path::_S_convert<char>(char const*, char const*) [221]
+[224]    0.0    0.00    0.00       1         std::filesystem::__cxx11::path::_Codecvt<wchar_t>::~_Codecvt() [224]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[225]    0.0    0.00    0.00       1         std::filesystem::__cxx11::path::~path() [225]
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::_List::~_List() [222]
+-----------------------------------------------
+                0.00    0.00       1/1           parse_count(char const*, unsigned long long&) [116]
+[226]    0.0    0.00    0.00       1         std::basic_string_view<char, std::char_traits<char> > std::filesystem::__cxx11::__detail::__effective_range<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [226]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[227]    0.0    0.00    0.00       1         std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::get_deleter() [227]
+-----------------------------------------------
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::~path() [225]
+[228]    0.0    0.00    0.00       1         std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+                0.00    0.00       1/1           std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>::_M_head(std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>&) [218]
+                0.00    0.00       1/1           std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head(std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [229]
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::_List::_Impl*& std::__get_helper<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [246]
+                0.00    0.00       1/1           std::tuple_element<0ull, std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter> >::type& std::get<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [252]
+                0.00    0.00       1/1           std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_ptr() [232]
+                0.00    0.00       1/1           std::_Head_base<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter, true>::_M_head(std::_Head_base<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter, true>&) [219]
+                0.00    0.00       1/1           std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head(std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [230]
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::_List::_Impl_deleter& std::__get_helper<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [247]
+                0.00    0.00       1/1           std::tuple_element<1ull, std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter> >::type& std::get<1ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [253]
+                0.00    0.00       1/1           std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_deleter() [231]
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::get_deleter() [227]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[229]    0.0    0.00    0.00       1         std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head(std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [229]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[230]    0.0    0.00    0.00       1         std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head(std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [230]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[231]    0.0    0.00    0.00       1         std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_deleter() [231]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[232]    0.0    0.00    0.00       1         std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_ptr() [232]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::format<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::basic_format_string<char, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::type>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [256]
+[233]    0.0    0.00    0.00       1         std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_args<std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >(std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > > const&) [233]
+                0.00    0.00       1/1           auto std::__format::__pack_arg_types<5, 2ull>(std::array<std::__format::_Arg_t, 2ull> const&) [243]
+-----------------------------------------------
+                0.00    0.00       1/1           std::filesystem::__cxx11::path::_Codecvt<wchar_t>::_Codecvt() [223]
+[234]    0.0    0.00    0.00       1         std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::codecvt_utf8_utf16(unsigned long long) [234]
+                0.00    0.00       1/1           unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) [254]
+                0.00    0.00       1/1           std::__codecvt_utf8_utf16_base<wchar_t>::__codecvt_utf8_utf16_base(unsigned long, std::codecvt_mode, unsigned long long) [238]
+-----------------------------------------------
+                0.00    0.00       1/1           auto std::filesystem::__cxx11::path::_S_convert<char>(char const*, char const*) [221]
+[235]    0.0    0.00    0.00       1         std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::~codecvt_utf8_utf16() [235]
+-----------------------------------------------
+                0.00    0.00       1/1           parse_count(char const*, unsigned long long&) [116]
+[236]    0.0    0.00    0.00       1         std::basic_format_context<std::__format::_Sink_iter<char>, char>::basic_format_context(std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >, std::__format::_Sink_iter<char>) [236]
+-----------------------------------------------
+                0.00    0.00       1/1           parse_count(char const*, unsigned long long&) [116]
+[237]    0.0    0.00    0.00       1         std::basic_format_context<std::__format::_Sink_iter<char>, char>::~basic_format_context() [237]
+-----------------------------------------------
+                0.00    0.00       1/1           std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::codecvt_utf8_utf16(unsigned long long) [234]
+[238]    0.0    0.00    0.00       1         std::__codecvt_utf8_utf16_base<wchar_t>::__codecvt_utf8_utf16_base(unsigned long, std::codecvt_mode, unsigned long long) [238]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >) [257]
+[239]    0.0    0.00    0.00       1         std::span<char, 18446744073709551615ull>::span<256ull>(char (&) [256ull]) [239]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[240]    0.0    0.00    0.00       1         std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long long) [240]
+                0.00    0.00       1/11          double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long long>(double*, unsigned long long) [163]
+                0.00    0.00       1/11          double* std::__uninitialized_default_n<double*, unsigned long long>(double*, unsigned long long) [165]
+                0.00    0.00       1/15397222     parse_count(char const*, unsigned long long&) [116]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[241]    0.0    0.00    0.00       1         std::vector<double, std::allocator<double> >::end() [241]
+-----------------------------------------------
+                0.00    0.00       1/1           parse_count(char const*, unsigned long long&) [116]
+[242]    0.0    0.00    0.00       1         std::__format::_Optional_locale::~_Optional_locale() [242]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_args<std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >(std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > > const&) [233]
+[243]    0.0    0.00    0.00       1         auto std::__format::__pack_arg_types<5, 2ull>(std::array<std::__format::_Arg_t, 2ull> const&) [243]
+                0.00    0.00       4/31422177     __gcc_deregister_frame [115]
+                0.00    0.00       3/3           std::array<std::__format::_Arg_t, 2ull>::rend() const [200]
+                0.00    0.00       3/3           _ZSteqIPKNSt8__format6_Arg_tEEbRKSt16reverse_iteratorIT_ES8_QrqXeqcldtfL0p_4baseEcldtfL0p0_4baseERSt14convertible_toIbEE [203]
+                0.00    0.00       1/1           std::array<std::__format::_Arg_t, 2ull>::rbegin() const [216]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::get() && [217]
+[244]    0.0    0.00    0.00       1         std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow() [244]
+                0.00    0.00       2/4           std::span<char, 18446744073709551615ull>::begin() const [186]
+                0.00    0.00       1/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00       1/1           std::span<char, 18446744073709551615ull>::empty() const [214]
+                0.00    0.00       1/3           std::span<char, 18446744073709551615ull>::size() const [199]
+                0.00    0.00       1/31422177     __gcc_deregister_frame [115]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >) [257]
+[245]    0.0    0.00    0.00       1         std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::~_Seq_sink() [245]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[246]    0.0    0.00    0.00       1         std::filesystem::__cxx11::path::_List::_Impl*& std::__get_helper<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [246]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[247]    0.0    0.00    0.00       1         std::filesystem::__cxx11::path::_List::_Impl_deleter& std::__get_helper<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [247]
+-----------------------------------------------
+                0.00    0.00       1/1           __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::copy<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >) [255]
+[248]    0.0    0.00    0.00       1         double* std::__copy_move_a2<false, double*, double*, double*>(double*, double*, double*) [248]
+-----------------------------------------------
+                0.00    0.00       1/1           bool std::__str_codecvt_in<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&) [250]
+[249]    0.0    0.00    0.00       1         bool std::__do_str_codecvt<std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >, char, std::codecvt<wchar_t, char, _Mbstatet>, _Mbstatet, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const) [249]
+                0.00    0.00       1/1           std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::max_length() const [212]
+                0.00    0.00       1/1           std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::in(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const [213]
+-----------------------------------------------
+                0.00    0.00       1/1           bool std::__str_codecvt_in_all<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&) [251]
+[250]    0.0    0.00    0.00       1         bool std::__str_codecvt_in<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&) [250]
+                0.00    0.00       1/1           bool std::__do_str_codecvt<std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >, char, std::codecvt<wchar_t, char, _Mbstatet>, _Mbstatet, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const) [249]
+-----------------------------------------------
+                0.00    0.00       1/1           auto std::filesystem::__cxx11::path::_S_convert<char>(char const*, char const*) [221]
+[251]    0.0    0.00    0.00       1         bool std::__str_codecvt_in_all<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&) [251]
+                0.00    0.00       1/1           bool std::__str_codecvt_in<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&) [250]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[252]    0.0    0.00    0.00       1         std::tuple_element<0ull, std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter> >::type& std::get<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [252]
+-----------------------------------------------
+                0.00    0.00       1/1           std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [228]
+[253]    0.0    0.00    0.00       1         std::tuple_element<1ull, std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter> >::type& std::get<1ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [253]
+-----------------------------------------------
+                0.00    0.00       1/1           std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::codecvt_utf8_utf16(unsigned long long) [234]
+[254]    0.0    0.00    0.00       1         unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) [254]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[255]    0.0    0.00    0.00       1         __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::copy<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >) [255]
+                0.00    0.00       2/2           __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::__miter_base<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >) [210]
+                0.00    0.00       1/1           double* std::__copy_move_a2<false, double*, double*, double*>(double*, double*, double*) [248]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[256]    0.0    0.00    0.00       1         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::format<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::basic_format_string<char, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::type>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [256]
+                0.00    0.00       2/2           std::__format::_Arg_value<std::basic_format_context<std::__format::_Sink_iter<char>, char> > std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >::_S_make_elt<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [209]
+                0.00    0.00       1/1           std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_args<std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >(std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > > const&) [233]
+                0.00    0.00       1/1           std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >) [257]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::format<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::basic_format_string<char, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::type>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [256]
+[257]    0.0    0.00    0.00       1         std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >) [257]
+                0.00    0.00       1/1           std::span<char, 18446744073709551615ull>::span<256ull>(char (&) [256ull]) [239]
+                0.00    0.00       1/4           std::span<char, 18446744073709551615ull>::begin() const [186]
+                0.00    0.00       1/15397222     parse_count(char const*, unsigned long long&) [116]
+                0.00    0.00       1/1           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::get() && [217]
+                0.00    0.00       1/1           std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::~_Seq_sink() [245]
+-----------------------------------------------
+
+Index by function name
+
+  [10] read_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [189] std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base() [247] std::filesystem::__cxx11::path::_List::_Impl_deleter& std::__get_helper<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+ [116] parse_count(char const*, unsigned long long&) [120] std::move_iterator<unsigned char*>::move_iterator(unsigned char*) [210] __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::__miter_base<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >)
+  [22] write_nifti(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, NiftiVolume const&, std::vector<double, std::allocator<double> > const&) [231] std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_deleter() [151] char const* std::__miter_base<char const*>(char const*)
+  [13] save_map_png(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<double, std::allocator<double> > const&, unsigned long long, unsigned long long, unsigned long long, double, double, int) [232] std::__uniq_ptr_impl<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_ptr() [123] unsigned char* std::__miter_base<unsigned char*>(unsigned char*)
+   [2] FitResult fit_voxel_sub_ml<9>(double const*, double const*, double, double, double, double, double, double) [204] void std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::_M_set<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [211] _ZSt12construct_atISt17basic_string_viewIcSt11char_traitsIcEEJRS3_EQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S5_pispcl7declvalIT0_EEEEEPS5_S8_DpOS7_
+ [117] fit_device::clamp(double, double, double) [205] std::basic_format_arg<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_arg<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [14] _ZSt12construct_atIhJhEQaant20is_unbounded_array_vIT_ErqXgsnwcvPvLi0E_S0_pispcl7declvalIT0_EEEEEPS0_S3_DpOS2_
+   [3] double fit_device::evaluate<9>(double const*, double const*, double const*, double*, double (*) [2]) [190] std::reverse_iterator<std::__format::_Arg_t const*>::reverse_iterator(std::__format::_Arg_t const*) [161] unsigned char* std::__copy_move_a2<false, char const*, char const*, unsigned char*>(char const*, char const*, unsigned char*)
+ [166] NiftiVolume::~NiftiVolume() [233] std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >::basic_format_args<std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >(std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > > const&) [248] double* std::__copy_move_a2<false, double*, double*, double*>(double*, double*, double*)
+   [8] (anonymous namespace)::put_chunk(std::vector<unsigned char, std::allocator<unsigned char> >&, char const*, std::vector<unsigned char, std::allocator<unsigned char> > const&) [206] std::basic_string_view<char, std::char_traits<char> >::basic_string_view(char const*, unsigned long long) [132] unsigned char* std::__copy_move_a2<false, unsigned char*, unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*)
+   [4] ml_device::ml(double, double) [234] std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::codecvt_utf8_utf16(unsigned long long) [249] bool std::__do_str_codecvt<std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >, char, std::codecvt<wchar_t, char, _Mbstatet>, _Mbstatet, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&, std::codecvt_base::result (std::codecvt<wchar_t, char, _Mbstatet>::*)(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const)
+  [12] NiftiVolume::size() const [235] std::codecvt_utf8_utf16<wchar_t, 1114111ul, (std::codecvt_mode)0>::~codecvt_utf8_utf16() [16] unsigned char* std::__do_uninit_copy<std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*)
+ [119] std::move_iterator<unsigned char*>::base() const & [236] std::basic_format_context<std::__format::_Sink_iter<char>, char>::basic_format_context(std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >, std::__format::_Sink_iter<char>) [250] bool std::__str_codecvt_in<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&, _Mbstatet&, unsigned long long&)
+ [139] std::move_iterator<unsigned char*>::operator*() const [237] std::basic_format_context<std::__format::_Sink_iter<char>, char>::~basic_format_context() [149] std::__size_to_integer(unsigned long long)
+ [212] std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::max_length() const [238] std::__codecvt_utf8_utf16_base<wchar_t>::__codecvt_utf8_utf16_base(unsigned long, std::codecvt_mode, unsigned long long) [196] double* std::__do_uninit_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&)
+ [213] std::__codecvt_abstract_base<wchar_t, char, _Mbstatet>::in(_Mbstatet&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const [163] double* std::__uninitialized_default_n_1<true>::__uninit_default_n<double*, unsigned long long>(double*, unsigned long long) [122] std::move_iterator<unsigned char*> std::make_move_iterator<unsigned char*>(unsigned char*)
+ [199] std::span<char, 18446744073709551615ull>::size() const [155] unsigned char* std::__uninitialized_default_n_1<true>::__uninit_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long) [180] unsigned char* std::uninitialized_copy<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*)
+ [186] std::span<char, 18446744073709551615ull>::begin() const [239] std::span<char, 18446744073709551615ull>::span<256ull>(char (&) [256ull]) [162] unsigned char* std::uninitialized_copy<char const*, unsigned char*>(char const*, char const*, unsigned char*)
+ [214] std::span<char, 18446744073709551615ull>::empty() const [207] std::span<char, 18446744073709551615ull>::span<char*>(char*, unsigned long long) [181] unsigned char* std::uninitialized_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
+ [215] std::array<std::__format::_Arg_t, 2ull>::end() const [118] std::array<double, 9ull>::operator[](unsigned long long) [133] unsigned char* std::uninitialized_copy<unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*)
+ [187] std::array<std::__format::_Arg_t, 2ull>::data() const [137] std::array<unsigned char, 3ull>::end() [129] unsigned char* std::uninitialized_copy<std::move_iterator<unsigned char*>, unsigned char*>(std::move_iterator<unsigned char*>, std::move_iterator<unsigned char*>, unsigned char*)
+ [200] std::array<std::__format::_Arg_t, 2ull>::rend() const [138] std::array<unsigned char, 3ull>::begin() [251] bool std::__str_codecvt_in_all<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>, _Mbstatet>(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, _Mbstatet> const&)
+ [201] std::array<std::__format::_Arg_t, 2ull>::begin() const [169] std::vector<double, std::allocator<double> >::_Guard_alloc::_Guard_alloc(double*, unsigned long long, std::_Vector_base<double, std::allocator<double> >&) [197] double* std::uninitialized_fill_n<double*, unsigned long long, double>(double*, unsigned long long, double const&)
+ [216] std::array<std::__format::_Arg_t, 2ull>::rbegin() const [29] std::vector<double, std::allocator<double> >::_M_default_append(unsigned long long) [165] double* std::__uninitialized_default_n<double*, unsigned long long>(double*, unsigned long long)
+ [135] std::array<double, 9ull>::data() const [191] std::vector<double, std::allocator<double> >::_M_fill_initialize(unsigned long long, double const&) [157] unsigned char* std::__uninitialized_default_n<unsigned char*, unsigned long long>(unsigned char*, unsigned long long)
+ [175] std::array<double, 9ull>::operator[](unsigned long long) const [240] std::vector<double, std::allocator<double> >::_M_default_initialize(unsigned long long) [145] std::move_iterator<unsigned char*> std::__make_move_if_noexcept_iterator<unsigned char, std::move_iterator<unsigned char*> >(unsigned char*)
+ [167] std::vector<double, std::allocator<double> >::_M_check_len(unsigned long long, char const*) const [241] std::vector<double, std::allocator<double> >::end() [252] std::tuple_element<0ull, std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter> >::type& std::get<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+ [152] std::vector<double, std::allocator<double> >::max_size() const [208] std::vector<double, std::allocator<double> >::begin() [253] std::tuple_element<1ull, std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter> >::type& std::get<1ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::tuple<std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&)
+ [144] std::vector<unsigned char, std::allocator<unsigned char> >::_M_check_len(unsigned long long, char const*) const [170] std::vector<double, std::allocator<double> >::resize(unsigned long long) [124] double const& std::max<double>(double const&, double const&)
+ [158] std::vector<unsigned char, std::allocator<unsigned char> >::end() const [154] std::vector<double, std::allocator<double> >::~vector() [143] unsigned long long const& std::max<unsigned long long>(unsigned long long const&, unsigned long long const&)
+ [159] std::vector<unsigned char, std::allocator<unsigned char> >::begin() const [146] std::vector<unsigned char, std::allocator<unsigned char> >::_Guard_alloc::_Guard_alloc(unsigned char*, unsigned long long, std::_Vector_base<unsigned char, std::allocator<unsigned char> >&) [125] double const& std::min<double>(double const&, double const&)
+ [130] std::vector<unsigned char, std::allocator<unsigned char> >::cbegin() const [192] std::vector<unsigned char, std::allocator<unsigned char> >::_M_erase_at_end(unsigned char*) [254] unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+ [141] std::vector<unsigned char, std::allocator<unsigned char> >::max_size() const [28] std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long long) [140] unsigned long long const& std::min<unsigned long long>(unsigned long long const&, unsigned long long const&)
+ [217] std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::get() && [18] void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_append<unsigned char>(unsigned char&&) [127] __gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+ [142] std::_Head_base<0ull, gzFile_s*, false>::_M_head(std::_Head_base<0ull, gzFile_s*, false>&) [21] std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_initialize(unsigned long long) [255] __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > std::copy<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >)
+ [168] std::_Head_base<0ull, gzFile_s*, false>::_Head_base() [193] void std::vector<unsigned char, std::allocator<unsigned char> >::_M_range_initialize_n<unsigned char const*, unsigned char const*>(unsigned char const*, unsigned char const*, unsigned long long) [126] double const& std::clamp<double>(double const&, double const&, double const&)
+ [218] std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>::_M_head(std::_Head_base<0ull, std::filesystem::__cxx11::path::_List::_Impl*, false>&) [121] std::vector<unsigned char, std::allocator<unsigned char> >::end() [134] std::isnan(double)
+ [219] std::_Head_base<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter, true>::_M_head(std::_Head_base<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter, true>&) [131] std::vector<unsigned char, std::allocator<unsigned char> >::begin() [256] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::format<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::basic_format_string<char, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type, std::type_identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::type>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+ [220] auto std::filesystem::__cxx11::path::_S_convert<std::basic_string_view<char, std::char_traits<char> > >(std::basic_string_view<char, std::char_traits<char> >) [150] std::vector<unsigned char, std::allocator<unsigned char> >::resize(unsigned long long) [257] std::vformat[abi:cxx11](std::basic_string_view<char, std::char_traits<char> >, std::basic_format_args<std::basic_format_context<std::__format::_Sink_iter<char>, char> >)
+ [221] auto std::filesystem::__cxx11::path::_S_convert<char>(char const*, char const*) [19] std::vector<unsigned char, std::allocator<unsigned char> >::reserve(unsigned long long) [171] std::isfinite(float)
+ [222] std::filesystem::__cxx11::path::_List::~_List() [136] std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&) [203] _ZSteqIPKNSt8__format6_Arg_tEEbRKSt16reverse_iteratorIT_ES8_QrqXeqcldtfL0p_4baseEcldtfL0p0_4baseERSt14convertible_toIbEE
+ [223] std::filesystem::__cxx11::path::_Codecvt<wchar_t>::_Codecvt() [194] std::vector<unsigned char, std::allocator<unsigned char> >::vector() [128] bool std::operator==<unsigned char*>(std::move_iterator<unsigned char*> const&, std::move_iterator<unsigned char*> const&)
+ [224] std::filesystem::__cxx11::path::_Codecvt<wchar_t>::~_Codecvt() [147] std::vector<unsigned char, std::allocator<unsigned char> >::~vector() [198] bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+ [225] std::filesystem::__cxx11::path::~path() [195] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [148] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, char const*)
+ [226] std::basic_string_view<char, std::char_traits<char> > std::filesystem::__cxx11::__detail::__effective_range<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [176] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::__resize_and_overwrite<std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}>(unsigned long long, std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}) [172] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+ [227] std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::get_deleter() [177] std::__cxx11::to_string(int) [182] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+ [228] std::unique_ptr<std::filesystem::__cxx11::path::_List::_Impl, std::filesystem::__cxx11::path::_List::_Impl_deleter>::~unique_ptr() [178] unsigned int std::__detail::__to_chars_len<unsigned int>(unsigned int, int) [174] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+ [229] std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head(std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [179] void std::__detail::__to_chars_10_impl<unsigned int>(char*, unsigned int, unsigned int) [173] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+ [230] std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>::_M_head(std::_Tuple_impl<1ull, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [209] std::__format::_Arg_value<std::basic_format_context<std::__format::_Sink_iter<char>, char> > std::__format::_Arg_store<std::basic_format_context<std::__format::_Sink_iter<char>, char>, std::basic_string_view<char, std::char_traits<char> >, std::basic_string_view<char, std::char_traits<char> > >::_S_make_elt<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [183] std::__cxx11::to_string(int)::{lambda(char*, unsigned long long)#1}::operator()(char*, unsigned long long) const
+ [153] std::char_traits<char>::length(char const*) [242] std::__format::_Optional_locale::~_Optional_locale() [7] __fentry__
+ [202] std::char_traits<char>::compare(char const*, char const*, unsigned long long) [243] auto std::__format::__pack_arg_types<5, 2ull>(std::array<std::__format::_Arg_t, 2ull> const&) [115] __gcc_deregister_frame
+ [184] std::_Vector_base<double, std::allocator<double> >::_M_create_storage(unsigned long long) [244] std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::_M_overflow() [5] _mcount_private
+ [185] std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_Vector_impl_data() [245] std::__format::_Seq_sink<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::~_Seq_sink() [1] main
+ [188] _ZNSt12_Vector_baseIhSaIhEE12_Vector_implC1EvQ26is_default_constructible_vIN9__gnu_cxx14__alloc_traitsIT0_NS5_10value_typeEE6rebindIT_E5otherEE [164] void std::_Construct<double>(double*) [11] sin
+  [20] std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long long) [156] void std::_Construct<unsigned char>(unsigned char*) [6] sincos
+ [160] std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data::_Vector_impl_data() [246] std::filesystem::__cxx11::path::_List::_Impl*& std::__get_helper<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>(std::_Tuple_impl<0ull, std::filesystem::__cxx11::path::_List::_Impl*, std::filesystem::__cxx11::path::_List::_Impl_deleter>&) [9] <cycle 1>
