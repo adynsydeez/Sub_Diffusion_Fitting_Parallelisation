@@ -1,0 +1,4 @@
+variant=cuda
+sms=46
+voxels=4272
+fit_time_s=0.016312

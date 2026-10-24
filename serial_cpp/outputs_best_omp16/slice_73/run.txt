@@ -1,0 +1,4 @@
+variant=best sequential
+threads=16
+voxels=4272
+fit_time_s=0.017703

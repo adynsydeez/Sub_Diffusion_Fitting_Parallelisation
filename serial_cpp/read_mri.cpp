@@ -6,6 +6,7 @@
 #include <cmath>
 #include <cstdint>
 #include <cstring>
+#include <fstream>
 #include <memory>
 #include <stdexcept>
 #include <zlib.h>
@@ -27,6 +28,14 @@ namespace
     // NIfTI datatype codes
     constexpr int DT_INT16 = 4;
     constexpr int DT_FLOAT32 = 16;
+    constexpr int DT_FLOAT64 = 64;
+
+    // Copies value into raw header bytes (the inverse of get_field)
+    template <typename T>
+    void set_field(unsigned char *hdr, std::size_t offset, T value)
+    {
+        std::memcpy(hdr + offset, &value, sizeof(T));
+    }
 
     // Copies a field of type T out of raw bytes (memcpy avoids misaligned reads).
     // Assumes a little-endian host, which matches the files we accept.
@@ -154,6 +163,7 @@ NiftiVolume read_nifti(const std::string &path)
     const bool apply_scaling = std::isfinite(slope) && slope != 0.0f;
 
     NiftiVolume vol;
+    std::memcpy(vol.header.data(), hdr, HDR_SIZE);
     vol.X = static_cast<std::size_t>(dim[1]);
     vol.Y = static_cast<std::size_t>(dim[2]);
     vol.L = static_cast<std::size_t>(dim[3]);
@@ -189,4 +199,31 @@ NiftiVolume read_nifti(const std::string &path)
     }
 
     return vol;
+}
+
+void write_nifti(const std::string &path, const NiftiVolume &like, const std::vector<double> &data)
+{
+    if (data.size() != like.size())
+        throw std::runtime_error(path + ": data has " + std::to_string(data.size()) + " voxels, expected " +
+                                 std::to_string(like.size()));
+
+    // Same geometry as the input; only the shape, type, scaling and data offset change
+    std::array<unsigned char, HDR_SIZE> hdr = like.header;
+    set_field<int16_t>(hdr.data(), OFF_DIM, 3);
+    for (int i = 4; i < 8; ++i)
+        set_field<int16_t>(hdr.data(), OFF_DIM + 2 * i, 1);
+    set_field<int16_t>(hdr.data(), OFF_DATATYPE, DT_FLOAT64);
+    set_field<int16_t>(hdr.data(), OFF_BITPIX, 64);
+    set_field<float>(hdr.data(), OFF_VOX_OFFSET, 352.0f);
+    set_field<float>(hdr.data(), OFF_SCL_SLOPE, 1.0f);
+    set_field<float>(hdr.data(), OFF_SCL_INTER, 0.0f);
+    std::memcpy(hdr.data() + OFF_MAGIC, "n+1\0", 4);
+
+    std::ofstream file(path, std::ios::binary);
+    const char no_extension[4] = {0, 0, 0, 0}; // bytes 348-351: no header extensions
+    file.write(reinterpret_cast<const char *>(hdr.data()), HDR_SIZE);
+    file.write(no_extension, 4);
+    file.write(reinterpret_cast<const char *>(data.data()), static_cast<std::streamsize>(data.size() * sizeof(double)));
+    if (!file)
+        throw std::runtime_error(path + ": could not write file");
 }

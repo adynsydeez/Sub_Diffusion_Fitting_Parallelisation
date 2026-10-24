@@ -1,0 +1,151 @@
+[25468] fit_sub_cuda.exe@127.0.0.1
+  fit_kernel(const double *, int, double *, double *, double *) (1412, 1, 1)x(128, 1, 1), Context 1, Stream 7, Device 0, CC 8.9
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- --------------
+    Metric Name             Metric Unit   Metric Value
+    ----------------------- ----------- --------------
+    DRAM Frequency                  Ghz           9.47
+    SM Frequency                    Ghz           2.30
+    Elapsed Cycles                cycle    606,043,924
+    Memory Throughput                 %           0.76
+    DRAM Throughput                   %           0.76
+    Duration                         ms         263.10
+    L1/TEX Cache Throughput           %           0.00
+    L2 Cache Throughput               %           0.74
+    SM Active Cycles              cycle 577,914,627.30
+    Compute (SM) Throughput           %          82.38
+    ----------------------- ----------- --------------
+
+    INF   This workload is utilizing greater than 80.0% of the available compute or memory performance of this device.  
+          To further improve performance, work will likely need to be shifted from the most utilized to another unit.   
+          Start by analyzing workloads in the Compute Workload Analysis section.                                        
+
+    Section: GPU Speed Of Light Roofline Chart (Overview)
+    OPT   Est. Speedup: 81.08%                                                                                          
+          The ratio of peak float (FP32) to double (FP64) performance on this device is 64:1. The workload achieved     
+          close to 0% of this device's FP32 peak performance and 33% of its FP64 peak performance. If Compute Workload  
+          Analysis determines that this workload is FP64 bound, consider using 32-bit precision floating point          
+          operations to improve its performance. See the Profiling Guide                                                
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#roofline) for more details on roofline      
+          analysis.                                                                                                     
+
+    Section: Compute Workload Analysis
+    -------------------- ----------- ------------
+    Metric Name          Metric Unit Metric Value
+    -------------------- ----------- ------------
+    Executed Ipc Active   inst/cycle         0.09
+    Executed Ipc Elapsed  inst/cycle         0.09
+    Issue Slots Busy               %         2.21
+    Issued Ipc Active     inst/cycle         0.09
+    SM Busy                        %        82.38
+    -------------------- ----------- ------------
+
+    OPT   FP64 is the highest-utilized pipeline (82.4%) based on elapsed cycles in the workload, taking into account    
+          the rates of its different instructions. It executes 64-bit floating point operations. The pipeline is        
+          over-utilized and likely a performance bottleneck. Based on the number of executed instructions, the highest  
+          utilized pipeline (82.4%) is FP64 (FP64). It executes non-DMMA 64-bit floating point operations. Comparing    
+          the two, the overall pipeline utilization appears to be caused by frequent, low-latency instructions. See     
+          the Profiling Guide (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-decoder) or     
+          hover over the pipeline name to understand the workloads handled by each pipeline. The Instruction            
+          Statistics section shows the mix of executed instructions for this workload.                                  
+
+    Section: Memory Workload Analysis
+    --------------------------------------- ----------- ------------
+    Metric Name                             Metric Unit Metric Value
+    --------------------------------------- ----------- ------------
+    Local Memory Spilling Requests                                 0
+    Local Memory Spilling Request Overhead            %            0
+    L2 Sector Promotion Misses                        %            0
+    Shared Memory Spilling Requests                                0
+    Shared Memory Spilling Request Overhead           %            0
+    Memory Throughput                           Gbyte/s         3.48
+    Mem Busy                                          %         0.43
+    Max Bandwidth                                     %         0.76
+    L1/TEX Hit Rate                                   %        65.86
+    L2 Persisting Size                            Mbyte         7.08
+    L2 Compression Success Rate                       %        33.33
+    L2 Compression Ratio                                        0.01
+    L2 Compression Input Sectors                 sector           24
+    L2 Hit Rate                                       %        14.41
+    Mem Pipes Busy                                    %        22.12
+    --------------------------------------- ----------- ------------
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   128
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                  1,412
+    Registers Per Thread             register/thread             200
+    Shared Memory Configuration Size           Kbyte            8.19
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block        byte/block               0
+    # SMs                                         SM              46
+    Stack Size                                                 1,024
+    Threads                                   thread         180,736
+    # TPCs                                                        23
+    Enabled TPC IDs                                              all
+    Uses Green Context                                             0
+    Waves Per SM                                               15.35
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           24
+    Block Limit Registers                 block            2
+    Block Limit Shared Mem                block            8
+    Block Limit Warps                     block           12
+    Theoretical Active Warps per SM        warp            8
+    Theoretical Occupancy                     %        16.67
+    Achieved Occupancy                        %        13.91
+    Achieved Active Warps Per SM           warp         6.68
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 83.33%                                                                                    
+          The 2.00 theoretical warps per scheduler this kernel can issue according to its occupancy are below the       
+          hardware maximum of 12. This kernel's theoretical occupancy (16.7%) is limited by the number of required      
+          registers.                                                                                                    
+
+    Section: GPU and Memory Workload Distribution
+    -------------------------- ----------- ---------------
+    Metric Name                Metric Unit    Metric Value
+    -------------------------- ----------- ---------------
+    Average DRAM Active Cycles       cycle      19,060,160
+    Total DRAM Elapsed Cycles        cycle  14,956,681,216
+    Average L1 Active Cycles         cycle  577,914,627.30
+    Total L1 Elapsed Cycles          cycle  27,877,894,232
+    Average L2 Active Cycles         cycle   24,323,775.33
+    Total L2 Elapsed Cycles          cycle   8,871,626,352
+    Average SM Active Cycles         cycle  577,914,627.30
+    Total SM Elapsed Cycles          cycle  27,877,894,232
+    Average SMSP Active Cycles       cycle  558,195,621.20
+    Total SMSP Elapsed Cycles        cycle 111,511,576,928
+    -------------------------- ----------- ---------------
+
+    OPT   Est. Speedup: 6.587%                                                                                          
+          One or more SMSPs have a much higher number of active cycles than the average number of active cycles.        
+          Additionally, other SMSPs have a much lower number of active cycles than the average number of active         
+          cycles. Maximum instance value is 7.15% above the average, while the minimum instance value is 7.48% below    
+          the average.                                                                                                  
+
+    Section: Source Counters
+    ------------------------- ----------- ------------
+    Metric Name               Metric Unit Metric Value
+    ------------------------- ----------- ------------
+    Branch Instructions Ratio           %         0.06
+    Branch Instructions              inst  158,685,487
+    Branch Efficiency                   %        99.87
+    Avg. Divergent Branches      branches       726.04
+    ------------------------- ----------- ------------
+
+    OPT   Est. Speedup: 3.417%                                                                                          
+          This workload has uncoalesced global accesses resulting in a total of 1219869 excessive sectors (69% of the   
+          total 1762041 sectors). Check the L2 Theoretical Sectors Global Excessive table for the primary source        
+          locations. The CUDA Programming Guide                                                                         
+          (https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#device-memory-accesses) has additional      
+          information on reducing uncoalesced device memory accesses.                                                   
+

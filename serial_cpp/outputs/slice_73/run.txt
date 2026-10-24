@@ -1,0 +1,4 @@
+variant=serial, Ceres
+threads=1
+voxels=4272
+fit_time_s=26.571750
